@@ -1,0 +1,56 @@
+		<nav class="menu flex-column">
+			<div class="top flex-row">
+				<a class="logo" href="{$maccms.path}"><img class="img" src="{$maccms.site_logo|mac_url_img}"></a>
+				<a class="donwload" href="#" target="_blank">本站APP下载</a>
+				<div class="range">搜索:<span class="span active" data-value="">全部</span><span class="span" data-value="svideo">电影</span><span class="span" data-value="simgtxt">图文</span></div>
+				<form class="search" id="search" action="{:mac_url('vod/search')}" method="get" onSubmit="return qrsearch();">
+					<input id="searchtypeval" type="hidden" name="searchtypeval" value="">
+					<div class="range_wap">
+						<span class="value">全部</span>
+					</div>
+					<input class="input_text" type="text" id="wd" name="wd"  placeholder="关键字、标题搜索" autocomplete="off">
+					<button  type="submit"  style="border: none; background-color: transparent; border: 0;" class="search_submit icont icon_search" ></button>
+				</form>
+				
+			</div>
+
+			<div class="nav icont icon_slide">
+				<a class="link active" href="{$maccms.path}">首页</a>
+				{maccms:type order="asc" by="sort" ids="1"}
+				<a class="link " href="{:mac_url_type($vo)}">{$vo.type_name}</a>
+				{/maccms:type}
+				<div class="sub_nav">
+				{maccms:type order="asc" by="sort" ids="child"}
+				{if condition="$vo.type_pid eq 1"}
+					<a class="link " href="{:mac_url_type($vo)}">{$vo.type_name}</a>
+				{/if}
+				{/maccms:type}
+				</div>
+				{maccms:type order="asc" by="sort" ids="2"}
+				<a class="link " href="{:mac_url_type($vo)}">{$vo.type_name}</a>
+				{/maccms:type}
+				<div class="sub_nav">
+				{maccms:type order="asc" by="sort" ids="child"}
+				{if condition="$vo.type_pid eq 2"}
+					<a class="link " href="{:mac_url_type($vo)}">{$vo.type_name}</a>
+				{/if}
+				{/maccms:type}
+				</div>
+				{maccms:type order="asc" by="sort" ids="3"}
+				<a class="link " href="{:mac_url_type($vo)}">{$vo.type_name}</a>
+				{/maccms:type}
+				<div class="sub_nav">
+				{maccms:type order="asc" by="sort" ids="child"}
+				{if condition="$vo.type_pid eq 3"}
+				<a class="link " href="{:mac_url_type($vo)}">{$vo.type_name}</a>
+				{/if}
+				{/maccms:type}
+				</div>
+				<a class="link " href="{:mac_url('label/hot')}">最高评价</a>
+				<a class="link " href="#">发布地址</a>
+			</div>
+			<div class="qrcode">
+				<a href="#" class="link" target="_blank">扫码下载JAV女优馆APP</a>
+				<div id="codeImg" title="https://myg6.app"><canvas width="140" height="140" style="display: none;"></canvas><img src="data:image/png;base64,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" style="display: block;"></div>
+			</div>
+		</nav>

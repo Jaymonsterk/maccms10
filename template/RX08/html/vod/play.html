@@ -1,0 +1,122 @@
+<!doctype html>
+<html>
+<head>
+	<meta charset="UTF-8" />
+	<meta name="viewport" content="maximum-scale=1.0,minimum-scale=1.0,user-scalable=0,width=device-width,initial-scale=1.0,user-scalable=no" />
+    <title>在线播放{$obj.vod_name} {$obj['vod_play_list'][$param['sid']]['urls'][$param['nid']]['name']} - 高清资源 - {$maccms.site_name}</title>
+    <meta name="keywords" content="{$obj.vod_name}{$obj['vod_play_list'][$param['sid']]['urls'][$param['nid']]['name']}免费在线观看,{$obj.vod_name}剧情介绍" />
+    <meta name="description" content="{$obj.vod_name}{$obj['vod_play_list'][$param['sid']]['urls'][$param['nid']]['name']}免费在线观看,{$obj.vod_name}剧情介绍" />
+    <meta name="renderer" content="webkit" />
+	<meta http-equiv="X-UA-Compatible" content="IE=Edge,chrome=1" />
+    {include file="public/include"}
+    <link rel="stylesheet" type="text/css" href="{$maccms.path}static/assets/css/index.min.css">
+    <link rel="stylesheet" type="text/css" href="{$maccms.path}static/assets/css/pornplay.min.css" />
+	<script src="{$maccms.path}static/assets/style/js/jquery.min.js"></script> 
+</head>
+<body>
+{include file="public/head"}
+<main class="main">
+        <div class="play_wapper">
+            <div class="screen_wapper">
+                <h1 class="h1"> {$obj.vod_name}</h1>
+                <div class="video_wapper nature">
+                    <div class="bofang_box">
+					{$player_data} {$player_js}
+				</div>
+				<script type="text/javascript">
+					try {
+						if(/Android|webOS|iPhone|iPod|BlackBerry/i.test(navigator.userAgent)) {
+							document.write('<style>.bofang_box{width:100%;height:475px;}</style>');
+						} else {
+							document.write('<style>.bofang_box{width:100%;height:620px;}</style>');
+						}
+					} catch(e) {}
+				</script>
+                    <div class="sustain"></div>
+                </div>
+                <a class="broad_roll" href="#" target="_blank">
+                    <span class="span caster_roll">名优馆APP,支持ios和安卓,无广告,高速看片不卡顿，视频可倍速,可下载，告别高潮的等待，点击下载APP视频可倍速,可下载，告别高潮的等待，点击下载APP下载</span>
+                </a>
+                <div class="new_addr">
+                    <p>最新地址:<a href="{$maccms.site_url}" target="_blank">{$maccms.site_url}/</a></p>
+                    <a class="outlink" href="#" target="_blank" >凯时财富神话！</a>
+                </div>
+            </div>
+            <div class="intros">
+                <h1 class="h1"> {$obj.vod_name}</h1>
+                <div class="desc flex-row">
+                    <p>{$obj.vod_time|date='Y-m-d',###}</p>
+                </div>
+                 <p class="casters"><span class="span">演员:</span><a class="link icont icon_right" href="#">{$obj.vod_actor|mac_url_create='actor'}</a></p>
+                 <p class="labels"><span class="span">分类:</span>
+                 <a class='link icont icon_right' href="{:mac_url_type($obj)}">{$obj.type.type_name}</a>
+                 </p>
+                 {maccms:foreach name="obj.vod_play_list" id="vo" key="key"}
+                    <div class="resource">
+                    <p>视频采集地址:</p>
+                    {maccms:foreach name="vo.urls" id="vo2" key="key2" }
+                    <div class="text">
+                    	<input id="videoUrl" class="input" type="text" value="{$vo2.url}" />
+                    	</div>
+                    		{/maccms:foreach}
+                    <span id="copy">复制</span>
+                </div>
+                {/maccms:foreach}
+                <div id="propagandaVideoM" class="flex-row"></div>
+              
+                <div class="shot_box">
+                    <div class="post_wapper">
+                    	<script src="{$maccms.path}static/assets/ads/playad.js"></script> 
+                                   
+                                            </div>
+                    <div class="scale_layer hide">
+                        <a class="icont icon_close" href="javascript:void(0);"></a>
+                        <div class="img_wapper"></div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div id="propagandaVideoPC" class="flex-row"></div>
+       <section class="videos">
+            <h1 class="h1">相关推荐<a class="link" href="#">查看更多</a></h1>
+            <div class="content">
+            {maccms:vod num="6" type="current" order="desc" by="hits"}
+                      <<div class="grid_item">
+							<a class="link" href="{:mac_url_vod_play($vo)}">
+								<div class="img_post icont icon_kiss">
+									<img class="img" src="{:mac_url_img($vo.vod_pic)}" data-reload="3">
+								</div>
+								<p class="description">{$vo.vod_name}</p>
+								<div class="inform">
+									<span class="num">{$vo.vod_time|mac_day}</span>
+									<span class="icont icon_watch">{$vo.vod_hits}</span>
+								</div>
+							</a>
+						</div>
+               {/maccms:vod}
+                            </div>
+            <h1 class="h1">猜你喜欢<a class="link" href="#">换一批</a></h1>
+            <div class="content">
+            	 {maccms:vod num="6" type="current" order="desc" by="rnd"}
+                   <div class="grid_item">
+							<a class="link" href="{:mac_url_vod_play($vo)}">
+								<div class="img_post icont icon_kiss">
+									<img class="img" src="{:mac_url_img($vo.vod_pic)}" data-reload="3">
+								</div>
+								<p class="description">{$vo.vod_name}</p>
+								<div class="inform">
+									<span class="num">{$vo.vod_time|mac_day}</span>
+									<span class="icont icon_watch">{$vo.vod_hits}</span>
+								</div>
+							</a>
+						</div>
+                        {/maccms:vod} 
+                            </div>
+        </section>
+    </main>
+    <br/><br/>
+<span style="display:none" class="mac_history_set" alt="设置History历史记录" data-name="[{$obj.type.type_name}]{$obj.vod_name}" data-pic="{$obj.vod_pic|mac_url_img}"></span>
+<span style="display:none" class="mac_ulog_set" alt="设置播放页浏览记录" data-type="4" data-mid="{$maccms.mid}" data-id="{$obj.vod_id}" data-sid="{$param.sid}" data-nid="{$param.nid}"></span>
+{include file="public/foot"}
+</body>
+</html>

@@ -1,0 +1,114 @@
+<!doctype html>
+<html>
+<head>
+		<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+		<meta name="viewport" content="maximum-scale=1.0,minimum-scale=1.0,user-scalable=0,width=device-width,initial-scale=1.0,user-scalable=no">
+		<title>{$maccms.site_name}</title>
+		<meta name="keywords" content="{$maccms.site_keywords}" />
+		<meta name="description" content="{$maccms.site_description}" />
+		<meta name="renderer" content="webkit">
+		<meta http-equiv="X-UA-Compatible" content="IE=Edge,chrome=1">
+		<link rel="stylesheet" type="text/css" href="{$maccms.path}static/assets/css/index.min.css">
+    {include file="public/include"}
+</head>
+<body>
+{include file="public/head"}
+<main class="main nav_fixed">
+			<!--广告<script type="text/javascript" src="{$maccms.path}static/assets/ads/head.js"></script>-->
+			<div id="propagandaBottom"></div>
+			<section class="broadcast">
+				<h1 class="h1">馆长推荐</h1>
+				<div class="content broadroll">
+					<div class="scroll caster_roll">
+					{maccms:vod num="8" by="hits" order="desc" level="9"}
+						<a class="img_post icont icon_kiss" href="{:mac_url_vod_play($vo)}">
+							<img class="img" src="{:mac_url_img($vo.vod_pic)}" data-reload="3">
+						</a>
+					{/maccms:vod}
+					</div>
+				</div>
+			</section>
+			<div class="broadroll">
+				<span class="scroll caster_roll">第一步，下载谷歌，火狐，浏览器，可以解决浏览器屏蔽和播放问题。本站发布页，请收藏https://{$maccms.site_url}/,本站所有域名加 https:// 均可以正常访问，请保存邮箱{$maccms.site_email}，无法打开时发送邮件</span>
+			</div>
+			<section class="videos">
+				<h1 class="h1">最新视频</h1>
+				<div class="flex-row">
+					<div id="propagandaLeft"></div>
+					<div class="content">
+					{maccms:vod num="12" by="time" order="desc"}
+						<div class="grid_item">
+							<a class="link" href="{:mac_url_vod_play($vo)}">
+								<div class="img_post icont icon_kiss">
+									<img class="img" src="{:mac_url_img($vo.vod_pic)}" data-reload="3">
+								</div>
+								<p class="description">{$vo.vod_name}</p>
+								<div class="inform">
+									<span class="num">{$vo.vod_time|mac_day}</span>
+									<span class="icont icon_watch">{$vo.vod_hits}</span>
+								</div>
+							</a>
+						</div>
+						{/maccms:vod}
+					</div>
+			</section>
+			<br/>
+		{maccms:type ids="6,7,8,9,10" order="asc" by="sort"}
+			<section class="videos">
+				<br/><br/><br/><br/>
+				<h1 class="h1">最新{$vo.type_name}</h1>
+				<div class="flex-row">
+					<div id="propagandaLeft"></div>
+					<div class="content">
+					{maccms:vod num="12" type="'.$vo['type_id'].'"  order="desc" by="time"}
+						<div class="grid_item">
+							<a class="link" href="{:mac_url_vod_play($vo)}">
+								<div class="img_post icont icon_kiss">
+									<img class="img" src="{:mac_url_img($vo.vod_pic)}" data-reload="3">
+								</div>
+								<p class="description">{$vo.vod_name}</p>
+								<div class="inform">
+									<span class="num">{$vo.vod_time|date='Y-m-d',###}</span>
+									<span class="icont icon_watch">{$vo.vod_hits}</span>
+								</div>
+							</a>
+						</div>
+						{/maccms:vod}
+					</div>
+					
+			</section>
+				<br/>
+			{/maccms:type}
+			
+		</main>
+		<div class="cover" style="display: none;">
+		</div>
+		<div class="weclcome_alert" style="display: none;">
+			<a href="javascript:void(0);" class="alert_close">
+				<img class="alert_img" src="{$maccms.path}static/assets/img/welcom.png">
+			</a>
+			<div class="alert_bottom">
+				<div class="alert_content">
+					<h1 class="alert_h1">
+                如遇网址视频打不开
+                <br>
+                请将网址http变成https
+            </h1>
+					<p class="alert_small">
+						如http://{$maccms.site_url}
+					</p>
+					<p class="alert_big">
+						变成
+						<span class="alert_span">https</span> ://{$maccms.site_url}
+					</p>
+					<a href="javascript:void(0);" class="alert_button" id="copyUrl">复制本站网址</a>
+					<a href="#" class="alert_button" target="_blank">下载安卓APP</a>
+					<a href="javascript:void(0);" class="alert_link">联系邮箱：{$maccms.site_email}</a>
+				</div>
+			</div>
+		</div>
+			<br/>
+				<br/>
+{include file="public/foot"}
+</body>
+</html>

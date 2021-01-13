@@ -1,0 +1,1 @@
+document.writeln("<img class=\'img\' src=\'/static/assets/ads/img/playad.png\'/>");

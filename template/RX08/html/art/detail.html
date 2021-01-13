@@ -1,0 +1,59 @@
+<!doctype html>
+<html>
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+	<meta name="viewport" content="maximum-scale=1.0,minimum-scale=1.0,user-scalable=0,width=device-width,initial-scale=1.0,user-scalable=no">
+    <title>{$obj.art_name} - {$maccms.site_name}</title>
+    <meta name="keywords" content="{$obj.art_name}最新小说,推荐小说" />
+    <meta name="description" content="{$obj.art_name}最新小说,推荐小说" />
+	<meta name="renderer" content="webkit">
+	<meta http-equiv="X-UA-Compatible" content="IE=Edge,chrome=1">
+    {include file="public/include"}
+	<link rel="stylesheet" type="text/css" href="{$maccms.path}static/assets/css/pornnews.min.css">
+</head>
+<body>
+{include file="public/head"}
+
+
+
+ <main class="main has_filter">
+        <div id="propagandaInsert" class="flex-row"></div>
+        <div id="propagandaBottom" ></div>
+<h1 class="caster cross_line">{$obj.type.type_name}<small class="small">主题的小说</small></h1>
+        <div class="flex-row">
+            <div id="propagandaLeft"></div>
+            <div id="propagandaRight"></div>
+                                                                                                            <section class="content article">
+            <h1 class="h1">{$obj.art_name} </h1>
+            <p class="subs"><span class="span">发表日期:{$obj.art_time|date="Y-m-d",###}</span><span class="span">浏览量: {$vo.art_hits} </span></p>
+            <div class="ol">
+  
+                                <a class="link" href="#">{$obj.type.type_name}</a>
+
+                            </div>
+            <div class="textarea">
+			
+<br />
+<br />
+{$obj.art_page_list[$param['page']]['content']}
+<br />
+<br />
+<br />
+
+</div>
+            <div class="origin ">本文原始地址：{$maccms.site_url} ；本站只做信息分享，转载请注明出处</div>     
+            </section>
+        </div>
+    </main>
+
+
+<br/>
+			<br/><br/>
+
+<span style="display:none" class="mac_ulog_set" alt="设置内容页浏览记录" data-type="1" data-mid="{$maccms.mid}" data-id="{$obj.art_id}" data-sid="" data-nid=""></span>
+<span style="display:none" class="mac_history_set" alt="设置History历史记录" data-name="[{$obj.type.type_name}]{$obj.art_name}" data-pic="{$obj.art_pic|mac_url_img}"></span>
+<script src="{$maccms.path}static/assets/js/pornews.js"></script>
+{include file="public/foot"}
+</body>
+</html>
+

@@ -1,0 +1,8 @@
+document.writeln("<div id=\'propagandaInsert\' class=\'flex-row\' style=\'display: flex;\'>");
+document.writeln("	<a class=\'link\' target=\'_blank\' href=\'#\'><span class=\'img_wapper\'><img class=\'img\' src=\'http://ys03.testx.vip/template/default_pc/html/style/images/V1_P2-P3_PC_J777_1200-100_YX2.gif\'></span></a>");
+document.writeln("	<a class=\'link\' target=\'_blank\' href=\'#\'><span class=\'img_wapper\'><img class=\'img\' src=\'http://ys03.testx.vip/template/default_pc/html/style/images/V1_P2-P3_PC_J777_1200-100_YX3.gif\'></span></a>");
+document.writeln("	<a class=\'link\' target=\'_blank\' href=\'#\'><span class=\'img_wapper\'><img class=\'img\' src=\'http://ys03.testx.vip/template/default_pc/html/style/images/V1_P2-P3_PC_J777_1200-100_YX2.gif\'></span></a>");
+document.writeln("	<a class=\'link\' target=\'_blank\' href=\'#\'><span class=\'img_wapper\'><img class=\'img\' src=\'http://ys03.testx.vip/template/default_pc/html/style/images/V1_P2-P3_PC_J777_1200-100_YX3.gif\'></span></a>");
+document.writeln("	<a class=\'link\' target=\'_blank\' href=\'#\'><span class=\'img_wapper\'><img class=\'img\' src=\'http://ys03.testx.vip/template/default_pc/html/style/images/V1_P2-P3_PC_J777_1200-100_YX2.gif\'></span></a>");
+document.writeln("	<a class=\'link\' target=\'_blank\' href=\'#\'><span class=\'img_wapper\'><img class=\'img\' src=\'http://ys03.testx.vip/template/default_pc/html/style/images/V1_P2-P3_PC_J777_1200-100_YX3.gif\'></span></a>");
+document.writeln("</div>");

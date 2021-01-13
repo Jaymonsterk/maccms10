@@ -1,0 +1,55 @@
+<!doctype html>
+<html>
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+	<meta name="viewport" content="maximum-scale=1.0,minimum-scale=1.0,user-scalable=0,width=device-width,initial-scale=1.0,user-scalable=no">
+    <title>{$obj.type_title} - {$maccms.site_name}</title>
+    <meta name="keywords" content="{$obj.type_key}" />
+    <meta name="description" content="{$obj.type_des}" />
+	<meta name="renderer" content="webkit">
+	<meta http-equiv="X-UA-Compatible" content="IE=Edge,chrome=1">
+    {include file="public/include"}
+</head>
+<body>
+{include file="public/head"}
+	<main class="main has_filter">
+		<!--广告<script type="text/javascript" src="{$maccms.path}static/assets/ads/head.js"></script>-->
+			<div id="propagandaInsert" class="flex-row"></div>
+			<div id="propagandaBottom"></div>
+			<nav class="filter cross_line">
+			{maccms:type ids="current" order="asc" by="sort"}
+			{if condition="$obj.type_id eq $vo.type_id"}
+			{else}
+				<a  class="link radius-4 active" href="{:mac_url_type($vo)}">{$vo.type_name}</a>
+			{/if}
+			{/maccms:type}
+				
+				
+			</nav>
+			<h1 class="caster cross_line">{$obj.type_name}<small class="small">主题的小说</small></h1>
+			<div class="flex-row videos">
+				<div id="propagandaLeft"></div>
+				<section class="flex-row content">
+				 {maccms:art num="12" paging="yes" pageurl="art/type" order="desc" by="time"}
+					<div class="grid_item ">
+						<a class="link" href="{:mac_url_art_detail($vo)}">
+							<div class="img_post icont icon_kiss">
+								<img class="img" src="{$maccms.path}static/assets/img/xs.png" data-reload="3">
+							</div>
+							<p class="description">{$vo.art_name}</p>
+							<div class="inform">
+								<span class="num">{$vo.art_time|mac_day}</span>
+								<span class="icont icon_watch">{$vo.art_hits}</span>
+							</div>
+						</a>
+					</div>
+					{/maccms:art}
+
+				</section>
+				<div id="propagandaRight"></div>
+			</div>
+		</main>
+{include file="public/paging"}
+{include file="public/foot"}
+</body>
+</html>
