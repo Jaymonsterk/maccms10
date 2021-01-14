@@ -28,7 +28,7 @@ return array (
   ),
   'videojs' => 
   array (
-    'status' => '0',
+    'status' => '1',
     'sort' => '907',
     'from' => 'videojs',
     'show' => 'videojs-H5播放器',
@@ -40,7 +40,7 @@ return array (
   ),
   'iva' => 
   array (
-    'status' => '0',
+    'status' => '1',
     'from' => 'iva',
     'show' => 'iva-H5播放器',
     'des' => 'videojj.com',
@@ -53,7 +53,7 @@ return array (
   ),
   'iframe' => 
   array (
-    'status' => '0',
+    'status' => '1',
     'from' => 'iframe',
     'show' => 'iframe外链数据',
     'des' => 'iframe外链数据',
@@ -65,7 +65,7 @@ return array (
   ),
   'link' => 
   array (
-    'status' => '0',
+    'status' => '1',
     'sort' => '904',
     'from' => 'link',
     'show' => '外链数据',
@@ -77,7 +77,7 @@ return array (
   ),
   'swf' => 
   array (
-    'status' => '0',
+    'status' => '1',
     'sort' => '903',
     'from' => 'swf',
     'show' => 'Flash文件',
@@ -89,7 +89,7 @@ return array (
   ),
   'flv' => 
   array (
-    'status' => '0',
+    'status' => '1',
     'from' => 'flv',
     'show' => 'Flv文件',
     'des' => 'flv',

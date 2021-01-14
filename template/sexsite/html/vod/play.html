@@ -46,6 +46,15 @@
 			{$player_data}
 					{$player_js}			
 </div>
+    <script type="text/javascript">
+        try {
+            if(/Android|webOS|iPhone|iPod|BlackBerry/i.test(navigator.userAgent)) {
+                document.write('<style>.bofang_box{width:100%;height:475px;}</style>');
+            } else {
+                document.write('<style>.bofang_box{width:100%;height:620px;}</style>');
+            }
+        } catch(e) {}
+    </script>
 </div>
 </div>
 </div>
