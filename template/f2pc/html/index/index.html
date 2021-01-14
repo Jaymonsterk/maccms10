@@ -1,0 +1,136 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8"/>
+<title>{$maccms.site_name}</title>
+<meta name="keywords" content="{$maccms.site_keywords}"/>
+<meta name="description" content="{$maccms.site_description}"/>
+{include file="public/include"}
+</head>
+<body>
+<!-- 头部 -->
+{include file="public/head"}
+<div class="detail_right">
+	<div class="detail_right_tab">
+		<div class="detail_tab detail_tab2">
+			<div class="detail_right_div">
+				<h3><span class="detail_right_span">最新更新</span></h3>
+				<ul>
+						{maccms:vod num="6" type="all" order="desc" by="hits"}
+					<li>
+					<p class="img">
+						<img class="lazy" src="{:mac_url_img($vo.vod_pic)}" alt="{$vo.vod_name}" title="{$vo.vod_name}">
+						<a href="{:mac_url_vod_play($vo)}"></a>
+					</p>
+					<p>
+							{$vo.vod_name}
+					</p>
+					<p>
+						<i>{$vo.vod_time|date='m-d',###}</i>
+						<strong>{$vo.vod_hits}观看</strong>
+					</p>
+					</li>
+						{/maccms:vod}
+				</ul>
+			</div>
+			
+			<!--分类开始-->
+			<div class="detail_right_div">
+					{maccms:type ids="1" order="asc" by="sort"}
+				<h3><span class="detail_right_span">{$vo.type_name}</span><a href="{:mac_url_type($vo)}">更多&gt;&gt;</a></h3>
+				 {/maccms:type}
+				<ul>
+						{maccms:vod num="6" type="1" order="desc" by="time"}
+					<li>
+					<p class="img">
+						<img class="lazy" src="{:mac_url_img($vo.vod_pic)}" alt="{$vo.vod_name}" title="{$vo.vod_name}">
+						<a href="{:mac_url_vod_play($vo)}"></a>
+					</p>
+					<p>
+							{$vo.vod_name}
+					</p>
+					<p>
+						<i>{$vo.vod_time|date='m-d',###}</i>
+						<strong>{$vo.vod_hits}观看</strong>
+					</p>
+					</li>
+						{/maccms:vod}
+				</ul>
+			</div>
+			<div class="detail_right_div">
+					{maccms:type ids="2" order="asc" by="sort"}
+				<h3><span class="detail_right_span">{$vo.type_name}</span><a href="{:mac_url_type($vo)}">更多&gt;&gt;</a></h3>
+				 {/maccms:type}
+				<ul>
+						{maccms:vod num="6" type="2" order="desc" by="time"}
+					<li>
+					<p class="img">
+						<img class="lazy" src="{:mac_url_img($vo.vod_pic)}" alt="{$vo.vod_name}" title="{$vo.vod_name}">
+						<a href="{:mac_url_vod_play($vo)}"></a>
+					</p>
+					<p>
+							{$vo.vod_name}
+					</p>
+					<p>
+						<i>{$vo.vod_time|date='m-d',###}</i>
+						<strong>{$vo.vod_hits}观看</strong>
+					</p>
+					</li>
+						{/maccms:vod}
+				</ul>
+			</div>
+			<div class="detail_right_div">
+					{maccms:type ids="3" order="asc" by="sort"}
+				<h3><span class="detail_right_span">{$vo.type_name}</span><a href="{:mac_url_type($vo)}">更多&gt;&gt;</a></h3>
+				 {/maccms:type}
+				<ul>
+						{maccms:vod num="6" type="3" order="desc" by="time"}
+					<li>
+					<p class="img">
+						<img class="lazy" src="{:mac_url_img($vo.vod_pic)}" alt="{$vo.vod_name}" title="{$vo.vod_name}">
+						<a href="{:mac_url_vod_play($vo)}"></a>
+					</p>
+					<p>
+							{$vo.vod_name}
+					</p>
+					<p>
+						<i>{$vo.vod_time|date='m-d',###}</i>
+						<strong>{$vo.vod_hits}观看</strong>
+					</p>
+					</li>
+						{/maccms:vod}
+				</ul>
+			</div>
+			<div class="detail_right_div">
+					{maccms:type ids="4" order="asc" by="sort"}
+				<h3><span class="detail_right_span">{$vo.type_name}</span><a href="{:mac_url_type($vo)}">更多&gt;&gt;</a></h3>
+				 {/maccms:type}
+				<ul>
+						{maccms:vod num="6" type="4" order="desc" by="time"}
+					<li>
+					<p class="img">
+						<img class="lazy" src="{:mac_url_img($vo.vod_pic)}" alt="{$vo.vod_name}" title="{$vo.vod_name}">
+						<a href="{:mac_url_vod_play($vo)}"></a>
+					</p>
+					<p>
+							{$vo.vod_name}
+					</p>
+					<p>
+						<i>{$vo.vod_time|date='m-d',###}</i>
+						<strong>{$vo.vod_hits}观看</strong>
+					</p>
+					</li>
+						{/maccms:vod}
+				</ul>
+			</div>
+			<!--分类结束-->
+		</div>
+	</div>
+</div>
+</div>
+<div style="clear:both;">
+</div>
+</div>
+</div>
+{include file="public/foot"}
+</html>

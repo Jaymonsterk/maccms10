@@ -1,0 +1,175 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<title>{$maccms.site_name}</title>
+<meta name="keywords" content="{$maccms.site_keywords}"/>
+<meta name="description" content="{$maccms.site_description}"/>
+{include file="public/include"}
+<body>
+{include file="public/head"}
+<div class="video-body">
+	<div class="video-head">
+		<div class="video-title">
+			最新热播
+		</div>
+	</div>
+	<div class="video-list">
+		{maccms:vod num="6" type="all" order="desc" by="hits"}
+		<div class="video-item">
+			<a href="{:mac_url_vod_play($vo)}" alt="{$feifei.vod_name}">
+			<div class="log">
+				<img class="lazy" src="{:mac_url_img($vo.vod_pic)}" alt="{$vo.vod_name}" title="{$vo.vod_name}">
+			</div>
+			<div class="title">
+				{$vo.vod_name}
+			</div>
+			<div class="video-foot">
+				<div class="time">
+					{$vo.vod_time|date='m-d',###}
+				</div>
+				<div class="view">
+					{$vo.vod_hits}次
+				</div>
+			</div>
+			</a>
+		</div>
+		{/maccms:vod}
+	</div>
+</div>
+<!--分类开始-->
+<div class="video-body">
+ {maccms:type ids="1" order="asc" by="sort"}
+	<div class="video-head">
+		<div class="video-title">
+			{$vo.type_name}
+		</div>
+		<a href="{:mac_url_type($vo)}" class="more">更多 <img src="{$maccms.path_tpl}images/more-ico.png"/></a>
+	</div>
+	{/maccms:type}
+	<div class="video-list">
+		{maccms:vod num="6" type="1" order="desc" by="time"}
+		<div class="video-item">
+			<a href="{:mac_url_vod_play($vo)}" alt="{$feifei.vod_name}">
+			<div class="log">
+				<img class="lazy" src="{:mac_url_img($vo.vod_pic)}" alt="{$vo.vod_name}" title="{$vo.vod_name}">
+			</div>
+			<div class="title">
+				{$vo.vod_name}
+			</div>
+			<div class="video-foot">
+				<div class="time">
+					{$vo.vod_time|date='m-d',###}
+				</div>
+				<div class="view">
+					{$vo.vod_hits}次
+				</div>
+			</div>
+			</a>
+		</div>
+		{/maccms:vod}
+	</div>
+</div>
+
+<div class="video-body">
+ {maccms:type ids="2" order="asc" by="sort"}
+	<div class="video-head">
+		<div class="video-title">
+			{$vo.type_name}
+		</div>
+		<a href="{:mac_url_type($vo)}" class="more">更多 <img src="{$maccms.path_tpl}images/more-ico.png"/></a>
+	</div>
+	{/maccms:type}
+	<div class="video-list">
+		{maccms:vod num="6" type="2" order="desc" by="time"}
+		<div class="video-item">
+			<a href="{:mac_url_vod_play($vo)}" alt="{$feifei.vod_name}">
+			<div class="log">
+				<img class="lazy" src="{:mac_url_img($vo.vod_pic)}" alt="{$vo.vod_name}" title="{$vo.vod_name}">
+			</div>
+			<div class="title">
+				{$vo.vod_name}
+			</div>
+			<div class="video-foot">
+				<div class="time">
+					{$vo.vod_time|date='m-d',###}
+				</div>
+				<div class="view">
+					{$vo.vod_hits}次
+				</div>
+			</div>
+			</a>
+		</div>
+		{/maccms:vod}
+	</div>
+</div>
+
+<div class="video-body">
+ {maccms:type ids="3" order="asc" by="sort"}
+	<div class="video-head">
+		<div class="video-title">
+			{$vo.type_name}
+		</div>
+		<a href="{:mac_url_type($vo)}" class="more">更多 <img src="{$maccms.path_tpl}images/more-ico.png"/></a>
+	</div>
+	{/maccms:type}
+	<div class="video-list">
+		{maccms:vod num="6" type="3" order="desc" by="time"}
+		<div class="video-item">
+			<a href="{:mac_url_vod_play($vo)}" alt="{$feifei.vod_name}">
+			<div class="log">
+				<img class="lazy" src="{:mac_url_img($vo.vod_pic)}" alt="{$vo.vod_name}" title="{$vo.vod_name}">
+			</div>
+			<div class="title">
+				{$vo.vod_name}
+			</div>
+			<div class="video-foot">
+				<div class="time">
+					{$vo.vod_time|date='m-d',###}
+				</div>
+				<div class="view">
+					{$vo.vod_hits}次
+				</div>
+			</div>
+			</a>
+		</div>
+		{/maccms:vod}
+	</div>
+</div>
+
+<div class="video-body">
+ {maccms:type ids="4" order="asc" by="sort"}
+	<div class="video-head">
+		<div class="video-title">
+			{$vo.type_name}
+		</div>
+		<a href="{:mac_url_type($vo)}" class="more">更多 <img src="{$maccms.path_tpl}images/more-ico.png"/></a>
+	</div>
+	{/maccms:type}
+	<div class="video-list">
+		{maccms:vod num="6" type="4" order="desc" by="time"}
+		<div class="video-item">
+			<a href="{:mac_url_vod_play($vo)}" alt="{$feifei.vod_name}">
+			<div class="log">
+				<img class="lazy" src="{:mac_url_img($vo.vod_pic)}" alt="{$vo.vod_name}" title="{$vo.vod_name}">
+			</div>
+			<div class="title">
+				{$vo.vod_name}
+			</div>
+			<div class="video-foot">
+				<div class="time">
+					{$vo.vod_time|date='m-d',###}
+				</div>
+				<div class="view">
+					{$vo.vod_hits}次
+				</div>
+			</div>
+			</a>
+		</div>
+		{/maccms:vod}
+	</div>
+</div>
+<!--分类结束-->
+{include file="public/foot"}
+</body>
+</html>

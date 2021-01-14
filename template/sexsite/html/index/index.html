@@ -1,0 +1,150 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+{include file="seo/index"}  
+{include file="public/include"}  
+
+</head>
+<body class="layout-column">
+<!-- 页头 开始 -->
+{include file="public/top"}  
+<!-- 页头 结束 -->
+<div id="main" class="layout-row flex">
+<!-- 页头 开始 -->
+{include file="public/header"}  
+<!-- 页头 结束 -->
+<div class="flex">
+    {include file="public/toplink"}  
+<div id="content">
+{maccms:vod num="1" type="35,36,37,38,39,40,41" by="time" order="desc" }
+<div>
+<div class="bg-black">
+<div class="list-item list-overlay">
+<div class="media"><a href="{:mac_url_vod_play($vo)}" title="{$vo.vod_name}" class="ajax media-content" style="background:rgba(0,0,0,0.3) url({:mac_url_img($vo.vod_pic)}) repeat scroll 0 0;"></a><div class="media-action"></div></div>
+<div class="list-content">
+<div class="list-body p-5 col-md-6">
+<div class="mb-3"><a href="{:mac_url_vod_play($vo)}" title="{$vo.vod_name}" ><span class="badge badge-md text-uppercase bg-white-overlay">{$vo.type_name}</span></a></div>
+<a href="{:mac_url_vod_play($vo)}" title="{$vo.vod_name}" class="list-title title ajax text-lg font-weight-bold mb-4 l-h-1x">{$vo.vod_name}</a>
+<a href="{:mac_url_vod_play($vo)}" title="{$vo.vod_name}" class="list-subtitle d-block text-muted subtitle ajax">{$vo.vod_name}</a>
+<div class="mt-4"><a href="{:mac_url_vod_play($vo)}" title="{$vo.vod_name}" class="ajax btn btn-primary b-2x btn-md">在线播放</a></div>
+</div>
+</div>
+</div>
+</div>
+	{/maccms:vod}	
+<div class="padding">
+<!--廣告位-->
+<div class="heading py-2 d-flex">
+<div><div class="text-muted text-sm sr-item"></div><h5 class="text-highlight sr-item">
+{maccms:link num="999" type="font" order="asc" by="sort"}
+{if condition="$vo.link_sort >= '301'&& $vo.link_sort <='350' "}
+<a href="{$vo.link_url}" target="_blank"  onclick="_czc.push(['_trackEvent', '伪分类点击', '{$vo.link_name}', '','','']);">{$vo.link_name}</a>
+{/if}
+{/maccms:link}
+</h5></div>
+
+<!--<a href="http://taoge228.a8fada./ "  target="_blank" onclick="_czc.push(['_trackEvent', 'LOVE直播点击', 'LOVE直播点击', '','','']);" > 今日更新</a>-->
+<!--<a href="http://taoge228.a8fada./ "  target="_blank" onclick="_czc.push(['_trackEvent', 'LOVE直播点击', 'LOVE直播点击', '','','']);" > 颜值美女</a>-->
+<!--<a href="http://taoge228.a8fada./ "  target="_blank" onclick="_czc.push(['_trackEvent', 'LOVE直播点击', 'LOVE直播点击', '','','']);" > 麻豆剧情</a>-->
+<!--<a href="http://taoge228.a8fada./ "  target="_blank" onclick="_czc.push(['_trackEvent', 'LOVE直播点击', 'LOVE直播点击', '','','']);" >台湾SWAG</a>-->
+<span class="flex"></span>
+</div>
+<div class="slick slick-visible slick-arrow-center row">
+	{maccms:vod num="16" type="35,36,37,38,39,40,41" by="time" order="desc" start="2"}
+<div class="col-3">
+<div class="list-item slick-item">
+<div class="media media-16x9">
+<a href="{:mac_url_vod_play($vo)}" title="{$vo.vod_name}" class="ajax media-content" style="background-image:url({:mac_url_img($vo.vod_pic)})"></a>
+<div class="media-overlay overlay-top"><a href="{:mac_url_vod_play($vo)}" title="{$vo.vod_name}"><span class="badge badge-md text-uppercase bg-primary">{$vo.type.type_name}</span></a></div>
+<div class="media-action"></div>
+</div>
+<div class="list-content">
+<div class="list-body"><a href="{:mac_url_vod_play($vo)}" title="{$vo.vod_name}" class="list-title title ajax h-1x">{$vo.vod_name}</a></div>
+<div class="list-footer"><div class="text-muted text-sm">{$vo.vod_hits} 播放</div></div>
+</div>
+</div>
+</div>
+	{/maccms:vod}	
+</div>
+
+	{maccms:type ids="6,7,8,9,10" order="asc" by="sort"}
+<div class="heading py-2 d-flex">
+<div><div class="text-muted text-sm sr-item"></div><h5 class="text-highlight sr-item">最新{$vo.type_name}</h5></div>
+<span class="flex"></span>
+</div>
+<div class="slick slick-visible slick-arrow-center row">
+	{maccms:vod num="12" type="'.$vo['type_id'].'"  order="desc" by="time"}
+<div class="col-3">
+<div class="list-item slick-item">
+<div class="media media-16x9">
+<a href="{:mac_url_vod_play($vo)}" title="{$vo.vod_name}" class="ajax media-content" style="background-image:url({:mac_url_img($vo.vod_pic)})"></a>
+<div class="media-overlay overlay-top"><a href="{:mac_url_vod_play($vo)}" title="{$vo.vod_name}"><span class="badge badge-md text-uppercase bg-primary">{$vo.type.type_name}</span></a></div>
+<div class="media-action"></div>
+</div>
+<div class="list-content">
+<div class="list-body"><a href="{:mac_url_vod_play($vo)}" title="{$vo.vod_name}" class="list-title title ajax h-1x">{$vo.vod_name}</a></div>
+<div class="list-footer"><div class="text-muted text-sm">{$vo.vod_hits} 播放</div></div>
+</div>
+</div>
+</div>
+	{/maccms:vod}	
+</div>
+	{/maccms:type}
+
+<div class="heading py-2 d-flex">
+<div><div class="text-muted text-sm sr-item"></div><h5 class="text-highlight sr-item">成人漫画</h5></div>
+<span class="flex"></span>
+</div>
+<div class="slick slick-visible slick-arrow-center row">
+	{maccms:art num="12" type="97" by="rnd" order="desc" }
+<div class="col-3">
+<div class="list-item slick-item">
+<div class="media media-9x16">
+<a href="{:mac_url_art_detail($vo)}" title="{$vo.art_name}" class="ajax media-content" style="background-image:url({:mac_url_img($vo.art_pic)})"></a>
+<div class="media-overlay overlay-top"><a href="{:mac_url_art_detail($vo)}" title="{$vo.art_name}"><span class="badge badge-md text-uppercase bg-primary">{$vo.type.type_name}</span></a></div>
+<div class="media-action"></div>
+</div>
+<div class="list-content">
+<div class="list-body"><a href="{:mac_url_art_detail($vo)}" title="{$vo.art_name}" class="list-title title ajax h-1x">{$vo.art_name}</a></div>
+<div class="list-footer"><div class="text-muted text-sm">{$vo.art_hits} 播放</div></div>
+</div>
+</div>
+</div>
+	{/maccms:art}	
+</div>
+
+<div class="heading py-2 d-flex">
+<div><div class="text-muted text-sm sr-item"></div><h5 class="text-highlight sr-item">美女图</h5></div>
+<span class="flex"></span>
+</div>
+<div class="slick slick-visible slick-arrow-center row">
+	{maccms:art num="12" type="76" by="rnd" order="desc" }
+<div class="col-3">
+<div class="list-item slick-item">
+<div class="media media-9x16">
+<a href="{:mac_url_art_detail($vo)}" title="{$vo.art_name}" class="ajax media-content" style="background-image:url({:mac_url_img($vo.art_pic)})"></a>
+<div class="media-overlay overlay-top"><a href="{:mac_url_art_detail($vo)}" title="{$vo.art_name}"><span class="badge badge-md text-uppercase bg-primary">{$vo.type.type_name}</span></a></div>
+<div class="media-action"></div>
+</div>
+<div class="list-content">
+<div class="list-body"><a href="{:mac_url_art_detail($vo)}" title="{$vo.art_name}" class="list-title title ajax h-1x">{$vo.art_name}</a></div>
+<div class="list-footer"><div class="text-muted text-sm">{$vo.art_hits} 播放</div></div>
+</div>
+</div>
+</div>
+	{/maccms:art}	
+</div>
+
+</div>
+</div>
+<hr style="clear: both;">
+<!-- 页尾 开始 -->
+{include file="public/footer"}  
+<!-- 页尾 结束 -->
+</div>
+</div>
+</div>
+</body>
+</html>
