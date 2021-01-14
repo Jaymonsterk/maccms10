@@ -1,0 +1,49 @@
+
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="utf-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <title>{$param.wd}{$param.actor}{$param.director}{$param.area}{$param.lang}{$param.year}{$param.class}搜索结果 - {$maccms.site_name}</title>
+    <meta name="keywords" content="{$param.wd}{$param.actor}{$param.director}{$param.area}{$param.lang}{$param.year}{$param.class}搜索结果" />
+    <meta name="description" content="{$param.wd}{$param.actor}{$param.director}{$param.area}{$param.lang}{$param.year}{$param.class}搜索结果" />
+{include file="public/include"}
+</head>
+<body>
+{include file="public/head"}
+<div class="video-body">
+	<div class="video-head">
+		<div class="video-title">
+			搜索：{$param.wd}{$param.actor}{$param.director}{$param.area}{$param.lang}{$param.year}{$param.class}
+		</div>
+	</div>
+	<div class="video-list">
+	{maccms:vod num="10" paging="yes" pageurl="vod/search" order="desc" by="time"}
+		<div class="video-item">
+			<a href="{:mac_url_vod_play($vo)}" alt="{$feifei.vod_name}">
+			<div class="log">
+				<img class="lazy" src="{:mac_url_img($vo.vod_pic)}" alt="{$vo.vod_name}" title="{$vo.vod_name}">
+			</div>
+			<div class="title">
+				{$vo.vod_name}
+			</div>
+			<div class="video-foot">
+				<div class="time">
+					{$vo.vod_time|date='m-d',###}
+				</div>
+				<div class="view">
+					{$vo.vod_hits}次
+				</div>
+			</div>
+			</a>
+		</div>
+    {/maccms:vod}
+	
+	</div>
+					<ul class="nextPage">
+				{include file="public/paging"}
+				</ul>	
+</div>
+{include file="public/foot"}
+</body>
+</html>

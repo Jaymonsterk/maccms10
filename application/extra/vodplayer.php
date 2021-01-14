@@ -15,7 +15,7 @@ return array (
   ),
   'videojs' => 
   array (
-    'status' => '1',
+    'status' => '0',
     'sort' => '907',
     'from' => 'videojs',
     'show' => 'videojs-H5播放器',
@@ -27,7 +27,7 @@ return array (
   ),
   'iva' => 
   array (
-    'status' => '1',
+    'status' => '0',
     'from' => 'iva',
     'show' => 'iva-H5播放器',
     'des' => 'videojj.com',
@@ -40,7 +40,7 @@ return array (
   ),
   'iframe' => 
   array (
-    'status' => '1',
+    'status' => '0',
     'from' => 'iframe',
     'show' => 'iframe外链数据',
     'des' => 'iframe外链数据',
@@ -52,7 +52,7 @@ return array (
   ),
   'link' => 
   array (
-    'status' => '1',
+    'status' => '0',
     'sort' => '904',
     'from' => 'link',
     'show' => '外链数据',
@@ -64,7 +64,7 @@ return array (
   ),
   'swf' => 
   array (
-    'status' => '1',
+    'status' => '0',
     'sort' => '903',
     'from' => 'swf',
     'show' => 'Flash文件',
@@ -76,7 +76,7 @@ return array (
   ),
   'flv' => 
   array (
-    'status' => '1',
+    'status' => '0',
     'from' => 'flv',
     'show' => 'Flv文件',
     'des' => 'flv',
@@ -86,5 +86,18 @@ return array (
     'sort' => '902',
     'tip' => '无需安装任何插件	',
     'id' => 'flv',
+  ),
+  'ckplayer' => 
+  array (
+    'status' => '1',
+    'from' => 'ckplayer',
+    'show' => 'CkPlayer-H5播放器',
+    'des' => 'ckplayer.com',
+    'target' => '_self',
+    'ps' => '0',
+    'parse' => '',
+    'sort' => '901',
+    'tip' => '无需安装任何插件',
+    'id' => 'ckplayer',
   ),
 );

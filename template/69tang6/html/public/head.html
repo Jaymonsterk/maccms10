@@ -1,0 +1,65 @@
+<div class="top-links" id="navbar">
+	<div class="center-hold">
+		<div class="member-links">
+			<ul>
+				<div class="navbar-form navbar-right ff-search" id="nav">
+					<li class="nav-item mac_user"><a class="nav-link" href="javascript:;">会员</a></li>
+				</div>
+			</ul>
+		</div>
+	</div>
+</div>
+<script>
+  new Clipboard('.btn');
+   new Clipboard('.tuiguangcopy');
+</script>
+<div class="container">
+	<div class="header">
+		<div class="logo">
+			<a href="{$maccms.path}"></a>
+		</div>
+		<div class="social-bookmarks">
+			<!-- AddThis Button BEGIN -->
+			<div class="addthis_toolbox addthis_default_style addthis_32x32_style">
+				<a class="addthis_button_preferred_1"></a>
+				<a class="addthis_button_preferred_2"></a>
+				<a class="addthis_button_preferred_3"></a>
+				<a class="addthis_button_preferred_4"></a>
+				<a class="addthis_button_compact"></a>
+			</div>
+			<script type="text/javascript">
+					var addthis_config = {
+						ui_language:''
+					}
+				</script>
+			<script type="text/javascript" src="//s7.addthis.com/js/250/addthis_widget.js" defer></script>
+			<!-- AddThis Button END -->
+		</div>
+		<div class="search">
+			<form id="search" name="search" method="POST" action="{:mac_url('vod/search')}" onSubmit="return qrsearch();">
+				<input class="search-button" id="searchbutton" type="submit" value=""/>
+				<div class="search-text">
+					<input type="text"  name="wd" placeholder="查看" value=""/>
+				</div>
+			</form>
+		</div>
+	</div>
+	<nav>
+	<div class="navigation">
+		<button class="button">
+		<span class="icon">
+		<span class="ico-bar"></span>
+		<span class="ico-bar"></span>
+		<span class="ico-bar"></span>
+		</span>
+		</button>
+		<ul class="primary">
+					<li {if condition="$maccms.aid eq 1"}class="selected"{/if}><a href="/" id="item1"title="首页">首页</a></li>
+            {maccms:type ids="parent" order="asc" by="sort"}
+            <li {if condition="($vo.type_id eq MAC_TYPE_ID || $vo.type_id eq MAC_TYPE_PID)"}class="selected"{/if}><a  href="{:mac_url_type($vo)}">{$vo.type_name}</a></li>
+            {/maccms:type}
+		</ul>
+		<ul class="secondary">
+		</ul>
+	</div>
+	</nav>

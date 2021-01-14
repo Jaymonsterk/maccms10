@@ -1,0 +1,81 @@
+
+#comment .ui-title h3{font-weight:700;color:#333}
+#comment .ui-cnt{width:960px;padding:19px;overflow:hidden}
+#comment .ui-form{padding:0}
+#cmt-input-tip .ui-input,#review-input-link .ui-input{width:958px;float:none;margin:0}
+#cmt-input-bd .ui-textarea{height:72px;padding:8px;width:942px}
+#cmt-input-bd .ui-form-info{margin:5px 0 0 0}
+#cmt-input-bd .ui-form-info p{margin:0;padding:0 15px 0 0}
+#comment .ui-form-item{margin:0}
+#comment .ui-bar{margin-top:10px;border:1px solid #eee}
+#comment .ui-bar .view-filter{padding:0}
+#replongform{width:300px;padding:15px;overflow:hidden}
+#replongform .ui-link-cnt{padding-top:5px}
+#replongform .ui-link-cnt .ui-link{float:right}
+.comment-list{margin:0 30px}
+.comment-list .kong{padding:10px 0 2px 0;text-align:center}
+.comment-focus{width:960px;padding:0 0 5px 0;overflow:hidden;margin:15px 0 0 0}
+.ui-comment{width:960px;margin:-15px 0 0 0;overflow:hidden;background:url(../images/bg-cmt-time.gif) -100px 15px repeat-y}
+.ui-comment .kong{margin-top:15px;text-align:center;background-color:#fff;font-size:14px}
+.comment-item{width:960px;padding:15px 0 0 0;overflow:hidden}
+.comment-time{width:52px;overflow:hidden;float:left}
+.comment-time .date-time{width:49px;height:48px;overflow:hidden;padding-left:3px;background:url(../images/bg-cmt-time.gif) 41px 0 no-repeat}
+.comment-time .date-time strong{display:block;color:#999;line-height:14px;text-align:left;width:49px;margin-top:4px;line-height:20px}
+.comment-post{width:897px;overflow:hidden;float:right}
+.comment-post-arrow{width:10px;height:15px;overflow:hidden;margin-top:17px;float:left;position:relative;background:url(../images/comment-arrow.gif) 0 0 no-repeat}
+.comment-post-cnt{width:866px;overflow:hidden;float:right;padding:10px;margin-left:-1px;border:1px solid #e3e3e3;background-color:#f9f9f9;border-radius:4px}
+.comment-avatar{width:50px;float:left;overflow:hidden}
+.comment-avatar img{display:block;width:50px;height:50px;overflow:hidden;border-radius:2px;background-color:#eee}
+.comment-body{width:805px;overflow:hidden;float:right}
+.comment-text{line-height:25px;font-size:14px;word-wrap:break-word}
+.comment-text .user,.comment-text a{color:#e12160}
+.comment-text em{margin-right:5px}
+.comment-assist{height:14px;line-height:14px;overflow:hidden;margin-top:8px;padding-right:4px}
+.comment-assist a{color:#999}
+.comment-assist a:hover{color:#e12160}
+.comment-assist span a{margin-right:10px}
+.comment-replay{width:805px;margin-top:5px;overflow:hidden}
+.comment-replay-arrow{width:17px;height:10px;overflow:hidden;position:relative;margin:0 0 0 781px;background:url(../images/comment-arrow.gif) -10px 0 no-repeat}
+.cmt-forward .cmt-replay-arrow{margin:0 0 0 15px}
+.comment-replay-cnt{width:783px;overflow:hidden;padding:10px;margin-top:-1px;border:1px solid #e3e3e3;background-color:#fbfbfb;border-radius:2px}
+.comment-replay .ui-textarea{width:765px;height:60px;line-height:20px;border-color:#ccc;background:url(../images/input-focus.gif) 0 0 repeat-x #fff}
+.comment-replay-assist{width:783px;height:30px;line-height:30px;overflow:hidden;padding-top:4px}
+.comment-replay-assist p{float:left}
+.comment-replay-assist .ui-button{float:right;margin:0;height:28px;line-height:28px;font-size:12px;background-color:#666}
+.comment-box{margin:0 0 0 70px;padding:6px 10px;border:1px solid #ddd;-moz-border-radius:5px;-webkit-border-radius:5px;border-radius:5px}
+.comment-name{height:24px;line-height:24px;color:#e12160}
+.comment-name a{color:#e12160}
+.comment-review .comment-name a{color:#333;font-size:14px;font-weight:700}
+.comment-review .comment-name a:hover{color:#e12160}
+.comment-cnt{color:#333;line-height:20px;font-size:12px}
+.comment-cnt a{color:#e12160}
+.comment-review .comment-cnt{font-size:14px;line-height:24px;padding:5px 0 3px 0}
+.comment-do{height:24px;line-height:24px;overflow:hidden;font-size:12px;margin:5px 0 0 0}
+.comment-do em{color:#ccc;margin:0 3px}
+.comment-do .date-time{color:#999}
+.comment-do .date-time a{color:#e12160;margin:0 5px 0 0}
+.comment-do .date-time,.comment-do strong{font-family:Tahoma,Arial,Helvetica,sans-serif}
+.comment-do strong{font-size:11px;-webkit-text-size-adjust:none}
+.comment-reply{padding-bottom:15px;overflow:hidden}
+.comment-reply li{padding:10px 0 0 70px;-moz-border-radius:3px;-webkit-border-radius:3px;border-radius:3px}
+#play-help .box{border-color:#390}
+#play-help .play-help-item{padding:5px 18px 18px 18px}
+#play-help .play-help-item h3{display:inline;background:#fff;line-height:30px;padding:0 10px;font-size:14px;color:#390;font-weight:700;position:relative;margin:0 0 0 10px}
+#play-help .play-help-item ul{display:block;overflow:hidden;color:#333;line-height:22px;padding:15px 0 10px 0;border:1px solid #ddd;backgrounds:#eafde0;margin-top:-15px}
+#play-help .play-help-item li{padding:3px 18px 3px 33px;background:url(../images/dot.gif) 20px 11px no-repeat}
+#play-help .play-help-item li.skills{border-top:1px solid #ddd;margin-top:10px;padding-top:10px;background-position:20px 18px}
+#play-help .play-help-item li label{color:#390}
+#play-help .play-help-item li a{color:#e12160}
+.back-top{width:73px;height:19px;line-height:20px;display:block;text-indent:18px;overflow:hidden;border:1px solid #e8e8e8;background:url(../images/back-top.gif) 6px 5px no-repeat;background-color:#f5f5f5;position:absolute;right:0;top:-1px}
+#back-to-top{position:fixed;right:20px;bottom:230px;display:none;z-index:999999}
+#back-to-top a{width:50px;height:50px;display:block;overflow:hidden;text-indent:-999px;background:url(../images/back-to-top.gif) 0 0 no-repeat #9f9f9f}
+#back-to-top a:hover{background-position:-50px 0;background-color:#18c2c8}
+.top-catalog{width:131px;border:0 none;padding-top:9px}
+.top-catalog h2,.top-catalog li{padding:1px 0;overflow:hidden}
+.top-catalog a{display:block;height:35px;line-height:35px;overflow:hidden;font-size:14px;text-align:center}
+@-moz-document url-prefix(){.top-catalog a{line-height:33px}
+}
+.top-catalog a:hover{text-decoration:none;background-color:#eee}
+.top-catalog .current a{color:#fff;font-weight:700;background-color:#18c2c8}
+.mac_comment .item_con .con{float:left}
+.mac_comment .item_con p.top{margin-top:6px;}

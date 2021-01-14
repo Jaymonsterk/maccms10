@@ -1,0 +1,99 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="utf-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<title>在线播放{$obj.vod_name} {$obj['vod_play_list'][$param['sid']]['urls'][$param['nid']]['name']} - 高清资源 - {$maccms.site_name}</title>
+<meta name="keywords" content="{$obj.vod_name}{$obj['vod_play_list'][$param['sid']]['urls'][$param['nid']]['name']}免费在线观看,{$obj.vod_name}剧情介绍"/>
+<meta name="description" content="{$obj.vod_name}{$obj['vod_play_list'][$param['sid']]['urls'][$param['nid']]['name']}免费在线观看,{$obj.vod_name}剧情介绍"/>
+ {include file="public/include"}
+</head>
+<body>
+{include file="public/head"}
+<div class="video-body gray">
+			<div id="bofang_box"style="height:320px;">
+			{$player_data}{$player_js}
+			</div>
+	<div class="palyContent">
+		<!--视频播放框-->
+		<div class="play" style="text-align:center;position:relative;background-color:#000;top:10px;">
+		</div>
+		<div class="playName">
+			<div class="left">
+				<p class="name">
+					{$obj.vod_name}
+				</p>
+			</div>
+			<div class="right">
+				<span class="watch"><img src="{$maccms.path_tpl}images/eyes_04.png">{$obj.vod_hits}次</span>
+				<span id="likes_msg" style="color:red;font-size: 0.25rem;float: left;position: absolute;width: 100%;left: 20%;top: 75%;"></span>
+			</div>
+		</div>
+		<div class="dz">
+			<span>采集地址:</span>
+			<a href="{:mac_url_vod_play($vo)}" target="_blank"><input id="ckcont" type="text" value="{$obj['vod_play_list'][$param['sid']]['urls'][$param['nid']]['url']}"/></a>
+			<button value="{$play_url}" style="z-index: 999999" onclick="ybcont()">复制地址</button>
+		</div>
+		<div class="dz">
+			<span>边下边看:</span>
+			<a href="{:mac_url_vod_play($vo)}" target="_blank"><input value="{$obj['vod_play_list'][$param['sid']]['urls'][$param['nid']]['url']}" id="ybcont" type="text" value="{$obj['vod_play_list'][$param['sid']]['urls'][$param['nid']]['url']}"/></a>
+			<button value="{$play_url}" style="z-index: 999999" onclick="ybcont()">复制地址</button>
+		</div>
+		<div class="youbo">
+			<a href="{:mac_url('label/ybguide')}" target="_blank">优播教程 </a>
+		</div>
+		<p style="padding:10px 0;font-size:0.6rem;">
+			更多精彩，请关注官方开车公众号：妹字幕
+		</p>
+		<div class="video-body video-related">
+			<div class="video-head">
+				<div class="video-title">
+					相关视频
+				</div>
+			</div>
+			<div class="video-list">
+			 {maccms:vod num="4" type="current" order="desc" by="addtime"}
+				<div class="video-item">
+					<a href="{:mac_url_vod_play($vo)}" alt="{$feifei.vod_name}">
+					<div class="log">
+						<img class="lazy" src="{:mac_url_img($vo.vod_pic)}" alt="{$vo.vod_name}" title="{$vo.vod_name}">
+					</div>
+					<div class="title">
+				{$vo.vod_name}
+					</div>
+					<div class="video-foot">
+						<div class="time">
+					{$vo.vod_time|date='m-d',###}
+						</div>
+						<div class="view">
+					{$vo.vod_hits}次
+						</div>
+					</div>
+					</a>
+				</div>
+    {/maccms:vod}
+			</div>
+			<p style="padding:10px 0;color:red;font-size:0.6rem;">
+				更多精彩，请关注官方开车公众号：fu2dzy
+			</p>
+		</div>
+{include file="public/foot"}
+		<script type="text/javascript" src="{$maccms.path_tpl}images/clipboard.min.js" charset="utf-8"></script>
+		<script type="text/javascript">
+    function ckcont() {
+        var ckcont = $('#ckcont').val();
+        var e=document.getElementById("ckcont");//对象是content
+        e.select(); //选择对象
+        document.execCommand("Copy"); //执行浏览器复制命令
+        alert("已复制好:"+ckcont);
+    }
+    function ybcont() {
+        var ybcont = $('#ybcont').val();
+        var e=document.getElementById("ybcont");//对象是content
+        e.select(); //选择对象
+        document.execCommand("Copy"); //执行浏览器复制命令
+        alert("已复制好:"+ybcont);
+    }
+		</script>
+		</body>
+		</html>

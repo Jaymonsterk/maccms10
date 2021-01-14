@@ -1,0 +1,12 @@
+.pagination li.cur a{color: #222;z-index: 3; color: #fff; background-color: #f56c08; border-color: #f56c08;}
+.mac_comment .remaining-w{width: 80%;text-align: right;}
+.mac_comment .cmt_form{margin-bottom: 40px;}
+.mac_comment .input_wrap .handle{position:relative;}
+.mac_comment .smt{position: absolute;bottom: -40px; right: 0;}
+.mac_comment .smt .cmt_post{}
+.right{float:right}
+.name{float:left}
+/*登录框*/
+.mac_pop{width: 90% !important;padding: 25px 2% !important;margin-left: 3% !important;}
+.mac_login{width: 100% !important;}
+.mac_comment{height: auto;}

@@ -1,0 +1,95 @@
+<script type="text/javascript">
+
+	$(function(){
+		$("body").bind('keyup',function(event) {
+			if(event.keyCode==13){ $('#btnLogin').click(); }
+		});
+		$('#btn_submit').click(function() {
+			if ($('#user_name').val()  == '') { alert('请输入用户！'); $("#user_name").focus(); return false; }
+			if ($('#user_pwd').val()  == '') { alert('请输入密码！'); $("#user_pwd").focus(); return false; }
+			if ($('#verify').val()  == '') { alert('请输入验证码！'); $("#verify").focus(); return false; }
+
+			$.ajax({
+				url: "{:url('user/login')}",
+				type: "post",
+				dataType: "json",
+				data: $('#fm').serialize(),
+				beforeSend: function () {
+					$("#btn_submit").css("background","#fd6a6a").val("loading...");
+				},
+				success: function (r) {
+					if(r.code==1){
+						location.href="{:url('user/index')}";
+					}
+					else{
+						alert(r.msg);
+						$('#verify_img').click();
+					}
+				},
+				complete: function () {
+					$("#btn_submit").css("background","#fa4646").val("立即登录");
+				}
+			});
+
+		});
+	});
+
+</script>
+<div class="detail_title">
+	<div class="width1200">
+		<h1><a href="/"></a></h1>
+		<div class="detail_submit">
+			<form id="search" name="search" method="POST" action="{:mac_url('vod/search')}" onSubmit="return qrsearch();">
+				<input type="text" placeholder="请输入搜索关键字"  name="wd" value=""/>
+				<input type="submit" value=""id="searchbutton"/>
+			</form>
+		</div>
+		
+	 <ul>
+	 <form method="post" id="fm" action="" class="form-horizontal ">
+      <li><input type="text" id="user_name" name="user_name" placeholder="请输入您的登录账号"></li>
+      <li><input type="password" id="user_pwd" name="user_pwd" placeholder="请输入您的登录密码"></li>     
+	  <li><input type="text" id="verify" class="verify"name="verify" placeholder="请输入验证码"></li>
+	  <li><img id="verify_img" src="{:url('verify/index')}" onClick="this.src=this.src+'?'"  alt="单击刷新" /></li>
+	  <li><input type="button" id="btn_submit" class="user_dl" value="立即登录"></li>
+       <li> <input type="button" onclick="window.location.href='{:url('user/reg')}';" value="立即注册"></li>
+   </form>
+<div class="form-group ff-alert clearfix"></div>	  
+	 </ul>
+	 
+   </div>
+  </div>
+<!-- 正文 -->
+<div class="detail">
+	<div class="width1200">
+		<div class="detail_left">
+			<ul>
+				<li>
+				<h3>栏目导航<span></span></h3>
+				<ol class="block">
+            <li class="{if condition="$maccms.aid eq 1"}select{/if}"><a class="nav-link" href="{$maccms.path}">网站首页<span></span></a></li>
+            {maccms:type ids="parent" order="asc" by="sort"}
+            <li class="{if condition="($vo.type_id eq MAC_TYPE_ID || $vo.type_id eq MAC_TYPE_PID)"}select{/if}"><a class="nav-link" href="{:mac_url_type($vo)}">{$vo.type_name}<span></span></a></li>
+            {/maccms:type}	
+				</ol>
+				</li>
+			</ul>
+            <div><a href="http://cy.sougaga.com/fu2d/" target="_blank">加入赚钱计划</a></div>
+            <div class="div1"><a href="http://cy.sougaga.com/chajian/" target="_blank">站长采集插件</a></div>
+            <div class="div3"><a href="http://djcm888.com/" target="_blank">广告合作</a></div>
+            <!--<div class="div2"><a href="">推广赚金币</a></div>-->
+            <div class="div5"><a href="http://f2dwp.com/" target="_blank">短视频下载专区</a></div>
+ 			
+			<div>
+			</div>
+			<div class="div1">
+			</div>
+			<div class="div3">
+			</div>
+			<div class="div5">
+			</div>
+			<p style="margin-top:20px;text-align:center;" class="ps_25">
+			</p>
+		</div>
+
+

@@ -1,0 +1,44 @@
+<div>
+	<a href="javascript:void(0);" class="v-top"><img src="{$maccms.path_tpl}images/top_03.png"/></a>
+</div>
+<div class="notice">
+		<a href="#" class="icon-speaker"></a>
+		<div class="notice-cont">
+			<span class="speaker"></span>
+			<div class="msg">
+				<marquee direction="left">  
+					<p style="color:red;font-weight:bolder;line-height:42px;">欢迎各位新老司机一起开车，秋名山上等你一起飙车，本站所有内容均免费在线播放，提供国产精品内容，百台高速服务器鼎力支持，稳定有效，更新及时！！！</p>
+				</marquee>
+			</div>
+			<a href="javascript:void(0);" class="ntc-btn">收起公告</a>
+		</div>
+</div>
+<div class="page-foot">
+	<div class="foot-log"><img src="{$maccms.path_tpl}images/logo.png"/></div>
+<div class="foot-body">
+		<div class="right-body">
+			<div class="line"><img style="width:65%;" src="{$maccms.path_tpl}images/fu2d.jpg"></div>
+		</div>
+	</div>
+	</div>	
+</div>
+<div class="foot-d"><a style="color:#f0ff00;" href="http://tb.53kf.com/code/client/10140693/1" target="_blank">7X24小时点击咨询</a></div>
+<div style="display:none">
+<center>
+{$maccms.site_tj}
+</center>
+</div>
+<script type="text/javascript" src="{$maccms.path_tpl}images/jquery.lazyload.min.js"></script>
+<script type="text/javascript" src="{$maccms.path_tpl}images/psCreat.js"></script>
+<script type="text/javascript" src="{$maccms.path_tpl}images/data.js"></script>
+<script type="text/javascript">
+
+$(function(){
+	$(".ntc-btn").click(function(){
+		$(".notice").hide(500);
+	});
+	$('img.lazy').lazyload();
+	showAds(ps);
+});
+
+</script>

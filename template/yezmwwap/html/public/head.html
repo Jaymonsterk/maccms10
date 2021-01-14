@@ -1,0 +1,35 @@
+<div class="head">
+	<div class="log"><img src="{$maccms.path_tpl}images/logo.png" alt=""></div>
+<div class="top-link">
+	<span>
+			<a class="link-item" href="https://www.emoneyspace.com/yzmw" target="_blank"><img src="{$maccms.path_tpl}images/fb1.png"></a>
+		<a class="link-item" href="https://www.yinzhentang.com" target="_blank"><img src="{$maccms.path_tpl}images/fb2.png"></a>
+
+	</span>
+
+</div>
+	<div class="search" id="searchOpen"><img src="{$maccms.path_tpl}images/search-ico.png" alt=""></div>
+</div>
+<div class="search-contain" id="search">	
+	<form id="search" name="search" method="POST" action="{:mac_url('vod/search')}" onSubmit="return qrsearch();">
+	<div class="label">
+		<input type="text" class="text" name="wd"value="" placeholder="输入搜索关键字" />
+		<div class="hide" id="searchClose">隐藏</div>
+	</div>
+	<div class="form-btn">
+		<button type="submit" class="submit"id="searchbutton">搜索</button>
+	</div>
+	</form>
+</div>
+<div class="navs">
+	<div class="navs-body">
+		<div id="nav">
+			<a href="/" class="nav-item {if condition="$maccms.aid eq 1"}on{/if}">首页</a>
+			  {maccms:type ids="parent" order="asc" by="sort"}
+            <a class="nav-item {if condition="($vo.type_id eq MAC_TYPE_ID || $vo.type_id eq MAC_TYPE_PID)"}on{/if}"href="{:mac_url_type($vo)}">{$vo.type_name}</a>
+            {/maccms:type}
+					</div>
+	</div>
+	<div class="nav-menu" id="navOpen"><img src="{$maccms.path_tpl}images/nav-ico.png"/></div>
+	 <div class="nav-popup" id="navPopup"><i></i></div>
+</div>

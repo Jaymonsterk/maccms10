@@ -1,0 +1,130 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="utf-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<meta name="viewport" content="minimum-scale=0.5,maximum-scale=1.0,user-scalable=no, initial-scale=1.0"/>
+<meta name="viewport" content="width=device-width, minimum-scale=1.0, maximum-scale=1.0, user-scalable=no"/>
+<meta name="renderer" content="webkit">
+<meta name="applicable-device" content="pc,mobile">
+<title>在线播放{$obj.vod_name} {$obj['vod_play_list'][$param['sid']]['urls'][$param['nid']]['name']} - 高清资源 - {$maccms.site_name}</title>
+<meta name="keywords" content="{$obj.vod_name}{$obj['vod_play_list'][$param['sid']]['urls'][$param['nid']]['name']}免费在线观看,{$obj.vod_name}剧情介绍"/>
+<meta name="description" content="{$obj.vod_name}{$obj['vod_play_list'][$param['sid']]['urls'][$param['nid']]['name']}免费在线观看,{$obj.vod_name}剧情介绍"/>
+ {include file="public/include"}
+ <link rel="stylesheet" href="{$maccms.path_tpl}css/style.css">
+</head>
+<body>
+{include file="public/head"}
+<div style="clear:both:">
+</div>
+<div class="content">
+	<div class="top">
+	</div>
+	<div class="headline">
+		<h1>{$obj.vod_name}</h1>
+		<br>
+	</div>
+	<div class="video-holder">
+		<div class="player">
+			<div class="player-holder">
+				<div id="bofang_box" style="height:520px;">
+				  {$player_data}
+                 {$player_js}
+				</div>
+			</div>
+		</div>
+		<div class="sponsor">
+			<marquee scrollamount="3" direction="left"><font color="#ff0"> (ง •̀_•́)ง 69堂声明：1.国内部分无法观看该问题已经提交处理，近期内可能部分视频无法观看，请暂时切换其他视频观看或者切换网络，建议vpn翻墙观看，注释：翻墙的话所有视频100%正常观看。 2.由于部分视频无法观看，我们决定近期每日登陆积分多送15分，以供大家使用更换其他视频观看使用。69堂不断努力完善中，谢谢！ </font></marquee>
+			<br/>
+		</div>
+		<div class="video-info">
+			<div class="info-holder">
+				<div id="tab_video_info" class="tab-content">
+					<div class="block-details">
+						<div class="info">
+							<div class="item">
+								<span>时长: <em>{$obj.vod_length}</em></span>
+								<span>浏览: <em>{$obj.vod_hits}</em></span>
+								<span>加入日期: <em>{$obj.vod_time|date='Y-m-d',###}</em></span>
+							</div>
+							<div class="item">
+									描述:
+								<em>{$obj.vod_name}</em>
+							</div>
+							<div class="item">
+									标签:{$obj.vod_class|mac_url_create='class'}
+							</div>
+							<div class="item">
+								<!--WAP版评论-->
+								<div class="mac_comment" data-id="{$obj.vod_id}" data-mid="{$maccms.mid}">
+								</div>
+								<script>
+            $(function(){
+                MAC.Comment.Login = {$comment.login};
+                MAC.Comment.Verify = {$comment.verify};
+                MAC.Comment.Init();
+                MAC.Comment.Show(1);
+            });
+        </script>
+							</div>
+						</div>
+					</div>
+				</div>
+				<div id="tab_comments" class="tab-content hidden">
+					<div class="block-comments" data-block-id="video_comments_video_comments">
+						<div class="list-comments hidden">
+							<div id="video_comments_video_comments">
+								<div class="margin-fix" id="video_comments_video_comments_items">
+								</div>
+							</div>
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+	</div>
+	<div class="related-videos" id="list_videos_related_videos">
+		<ul class="list-sort" id="list_videos_related_videos_filter_list">
+			<li><span>相关视频</span></li>
+		</ul>
+		<div class="box">
+			<div class="list-videos">
+				<div class="margin-fix" id="list_videos_related_videos_items">
+				 {maccms:vod num="12" type="current" order="desc" by="hits"}
+					<div class="item ">
+						<a style="" href="{:mac_url_vod_play($vo)}" title="{$vo.vod_name}">
+						<div class="img">
+							<img class="thumb lazy-load" src="data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" data-original="{:mac_url_img($vo.vod_pic)}" alt="{$vo.vod_name}" data-cnt="5" width="180" height="135"/>
+							<span class="ico-fav-0 " title="加入标签" data-fav-video-id="3890" data-fav-type="0"></span>
+							<span class="ico-fav-1 " title="稍后观看" data-fav-video-id="3890" data-fav-type="1"></span>
+						</div>
+						<strong class="title">
+							{$vo.vod_name}
+						</strong>
+						<div class="wrap">
+							<div class="duration">
+									{$vo.vod_time|date='Y-m-d',###}
+							</div>
+							<div class="rating positive">
+									{$vo.vod_hits}
+							</div>
+						</div>
+						<div class="wrap">
+							<div class="added">
+								<em></em>
+							</div>
+							<div class="views">
+									{$vo.vod_length}
+							</div>
+						</div>
+						</a>
+					</div>
+					  {/maccms:vod}
+				</div>
+			</div>
+		</div>
+	</div>
+</div>
+{include file="public/foot"}
+</body>
+</html>

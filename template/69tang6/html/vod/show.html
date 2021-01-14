@@ -1,0 +1,84 @@
+
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="utf-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<meta name="viewport" content="minimum-scale=0.5,maximum-scale=1.0,user-scalable=no, initial-scale=1.0" />
+<meta name="viewport" content="width=device-width, minimum-scale=1.0, maximum-scale=1.0, user-scalable=no" />
+<meta name="renderer" content="webkit">
+<meta name="applicable-device" content="pc,mobile">
+    <title>{$obj.type_title} - {$maccms.site_name}</title>
+    <meta name="keywords" content="{$obj.type_key}" />
+    <meta name="description" content="{$obj.type_des}" />
+{include file="public/include"}
+</head>
+<body>
+{include file="public/head"}
+<div class="content">
+	<div class="main-content">
+		<div class="main-container">
+			<div id="list_videos_common_videos_list">
+				<div class="headline">
+					<h1>			最新{$obj.type_name}		</h1>
+					<div class="sort">
+						<span class="icon type-sort"></span>
+						<strong>新的</strong>
+						<ul id="list_videos_common_videos_list_sort_list">
+						 <li><a href="{:mac_url_type($obj,['area'=>$param['area'],'lang'=>$param['lang'],'year'=>$param['year'],'level'=>$param['level'],'letter'=>$param['letter'],'state'=>$param['state'],'tag'=>$param['tag'],'class'=>$param['class'],'order'=>$param['order'],'by'=>'hits' ],'show')}" >热门的</a>
+							</li>
+							<li>
+							<a href="{:mac_url_type($obj,['area'=>$param['area'],'lang'=>$param['lang'],'year'=>$param['year'],'level'=>$param['level'],'letter'=>$param['letter'],'state'=>$param['state'],'tag'=>$param['tag'],'class'=>$param['class'],'order'=>$param['order'],'by'=>'time' ],'show')}" >最新更新的</a>
+							</li>
+						</ul>
+					</div>
+				</div>
+				<div class="box">
+					<div class="list-videos">
+						<div class="margin-fix" id="list_videos_common_videos_list_items">
+							<div class="place"></div>
+					{maccms:vod num="30" paging="yes" pageurl="vod/show" type="current" order="desc" by="time"}
+						<div class="item ">
+							<a style="" href="{:mac_url_vod_play($vo)}" title="{$vo.vod_name}">
+							<div class="img">
+								<img class="thumb lazy-load" src="data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" data-original="{:mac_url_img($vo.vod_pic)}" alt="{$vo.vod_name}" data-cnt="5" width="180" height="135"/>
+								<span class="ico-fav-0 " title="加入标签" data-fav-video-id="3890" data-fav-type="0"></span>
+								<span class="ico-fav-1 " title="稍后观看" data-fav-video-id="3890" data-fav-type="1"></span>
+							</div>
+							<strong class="title">
+							{$vo.vod_name}
+							</strong>
+							<div class="wrap">
+								<div class="duration">
+									{$vo.vod_time|date='Y-m-d',###}
+								</div>
+								<div class="rating positive">
+									{$vo.vod_hits}
+								</div>
+							</div>
+							<div class="wrap">
+								<div class="added">
+									<em></em>
+								</div>
+								<div class="views">
+									{$vo.vod_length}
+								</div>
+							</div>
+							</a>
+						</div>
+					  {/maccms:vod}
+
+						</div>
+					</div>
+				</div>
+		<div class="pagination" id="list_videos_most_recent_videos_pagination">
+			<div class="pagination-holder">
+				{include file="public/paging"}
+			</div>
+		</div>
+	</div>
+</div>
+</div></div></div>
+{include file="public/foot"}
+</body>
+</html>
