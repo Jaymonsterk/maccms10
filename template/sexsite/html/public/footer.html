@@ -1,0 +1,289 @@
+<footer id="footer" class="page-footer b-t">
+<div class="page-container">
+<div class="padding">
+<div class="text-sm text-muted">
+<div class="row">
+<div class="col-12 col-sm-3"></div>
+<div class="col-12 col-sm-9">&copy; Copyright {$maccms.site_name} 2019. All rights Reserved . {$maccms.site_url} By</div>
+</div>
+</div>
+</div>
+</div>
+
+</footer>
+{maccms:link num="999" type="font" order="asc" by="sort"}
+{if condition="$vo.link_sort <= '100'"}
+<a href="{$vo.link_url}" target="_blank" class="footlink">{$vo.link_name}</a>
+{/if}
+{/maccms:link}
+
+<style>
+@media screen and (max-width:990px){
+		    .ads img{
+		        height:65px !important;
+	        }
+}
+
+@media screen and (max-width:750px){
+            .duilian {
+			    display: none;
+			}
+		    .ads img{
+		        height:50px !important;
+              	    width: 100% !important;
+	        }
+	       .ads bigimg{
+                height:78px !important;
+            }
+    		.leftd {
+		    width: 90px !important;
+			}
+			.rightd {
+		    width: 90px !important;
+			}
+			.bottomads img{
+		    height: 55px !important;
+			}
+			.topads img{
+		    height: 55px !important;
+		    margin-top: 10px;
+			}
+}
+
+       	.leftd {
+		    position: fixed;
+		    top: 54%;
+		    transform: translateY(-50%);
+		    width: 120px;
+		    left: 0;
+		    z-index: 9999;
+		}
+		.rightd {
+		    position: fixed;
+		    top: 54%;
+		    transform: translateY(-50%);
+		    width: 120px;
+		    right: 0;
+		    z-index: 9999;
+		}
+		.close_btn {
+		    position: absolute;
+		    right: 0;
+		    top: 0;
+		    height: 20px;
+		    line-height: 20px;
+		    width: 40px;
+		    background: #f00;
+		    text-align: center;
+		}
+		
+.close_r {
+    /* still bad on picking color */
+    background: orange;
+    color: red;
+    /* make a round button */
+    border-radius: 12px;
+    /* center text */
+    line-height: 20px;
+    text-align: center;
+    height: 20px;
+    width: 20px;
+    font-size: 18px;
+    padding: 1px;
+}
+
+
+/* use cross as close button */
+.close_r::before {
+    content: "\2716";
+}
+/* place the button on top-right */
+.close_r {
+    top: -10px;
+    right: -10px;
+    position: absolute;
+}
+
+.close_l {
+    /* still bad on picking color */
+    background: orange;
+    color: red;
+    /* make a round button */
+    border-radius: 12px;
+    /* center text */
+    line-height: 20px;
+    text-align: center;
+    height: 20px;
+    width: 20px;
+    font-size: 18px;
+    padding: 1px;
+}
+
+
+/* use cross as close button */
+.close_l::before {
+    content: "\2716";
+}
+/* place the button on top-right */
+.close_l {
+    top: -10px;
+    left: -10px;
+    position: absolute;
+}
+
+.closebox1 {
+text-align: center;
+    display: inherit;
+    background-color: #fc4a99;
+    color: #fff;
+    padding: 4px 0;
+    display: block;
+}
+.closebox2 {
+text-align: center;
+    display: inherit;
+    background-color: #fc4a99;
+    color: #fff;
+    padding: 4px 0;
+    display: block;
+}
+.closebox3 {
+text-align: center;
+    display: inherit;
+    background-color: #fc4a99;
+    color: #fff;
+    padding: 4px 0;
+    display: block;
+}
+.closebox4 {
+text-align: center;
+    display: inherit;
+    background-color: #fc4a99;
+    color: #fff;
+    padding: 4px 0;
+    display: block;
+}
+</style>			
+<!-- 顶部漂浮-->
+<div class="topads">
+	{maccms:link  num="999" type="pic" order="asc" by="sort"}
+	{if condition="$vo.link_sort == '101'"}
+		<div class="tads">
+		    <a href="{$vo.link_url}" target="_blank" onclick="_czc.push(['_trackEvent', '顶漂广告点击', '{$vo.link_name}', '','','']);" ><img width="100%" height="100%" src="/{$vo.link_logo}" /></a>
+		    <span class="closebox1">关闭广告</span>
+		</div>
+	{/if}
+	{/maccms:link}
+</div>	
+<!-- 底部漂浮-->
+<div class="bottomads">
+	{maccms:link num="999" type="pic" order="asc" by="sort"}
+	{if condition="$vo.link_sort == '102'"}
+			<div class="bads" style="bottom: 25px;">
+			<span class="closebox2">关闭广告</span>
+		    <a href="{$vo.link_url}" target="_blank" onclick="_czc.push(['_trackEvent', '底漂广告点击', '{$vo.link_name}', '','','']);" ><img width="100%" height="100%" src="/{$vo.link_logo}" /></a>
+		</div>
+	{/if}
+	{/maccms:link}
+  </div>
+  
+<!-- 左右漂浮-->
+
+	{maccms:link num="999" type="pic" order="asc" by="sort"}
+	{if condition="$vo.link_sort == '103'"}
+	<div class="leftd">
+
+	<a  href="{$vo.link_url}" target="_blank" onclick="_czc.push(['_trackEvent', '左漂广告点击', '{$vo.link_name}', '','','']);" ><img width="100%" src="/{$vo.link_logo}"></a>	<span class="closebox3">关闭广告</span>
+	</div>
+	{/if}
+	{/maccms:link}
+	
+	{maccms:link num="999" type="pic" order="asc" by="sort"}
+	{if condition="$vo.link_sort == '104'"}
+	<div class="rightd">
+	<a href="{$vo.link_url}" target="_blank" onclick="_czc.push(['_trackEvent', '右漂广告点击', '{$vo.link_name}', '','','']);" ><img width="100%" src="/{$vo.link_logo}"></a>	<span class="closebox4">关闭广告</span>
+	</div>
+	{/if}
+	{/maccms:link}
+
+
+
+	<!--<div class="rightd">-->
+	<!--<a id="imgshref"  href="" target="_blank" onclick="_czc.push(['_trackEvent', '右漂广告点击', '成人', '','','']);" ><img width="100%" src="" id="imgs"></a>	<span class="closebox4">关闭广告</span>-->
+	<!--</div>-->
+
+
+<script type="text/javascript">
+
+function setImage()
+{
+var img = new Array();
+var url = new Array();
+img[0] = "https://thtmod1.com/upload/ad/CQ_120x120_B.gif"; url[0] = "https://l.tyrantdb.com/H9EwS5Hj";
+img[1] = "https://thtmod1.com/upload/ad/HA_120x120.gif"; url[1] = "https://l.tyrantdb.com/x3qYQF0X";
+img[2] = "https://thtmod1.com/upload/ad/kow_120x120.gif"; url[2] = "https://l.tyrantdb.com/FPfSEBxs";
+img[3] = "https://thtmod1.com/upload/ad/yyj_120x120.gif"; url[3] = "https://l.tyrantdb.com/8t0rNQxM";
+
+var iImage = Math.floor(Math.random() * img.length);
+
+document.getElementById("imgs").src = img[iImage];
+document.getElementById("imgshref").href = url[iImage];
+
+
+}
+
+setImage();
+    </script>
+
+
+
+
+
+
+
+
+
+
+
+
+    <script type="text/javascript">
+    	 $(".close_l").on("click",function(){
+                    $(this).parent("div").hide();
+                });
+    </script>
+    <script type="text/javascript">
+    	 $(".close_r").on("click",function(){
+                    $(this).parent("div").hide();
+                });
+    </script>
+    <script type="text/javascript">
+    	 $(".closebox1").on("click",function(){
+                    $(".closebox1").parent("div").css("display", "none");
+                });
+    </script>
+    <script type="text/javascript">
+    	 $(".closebox2").on("click",function(){
+                    $(".closebox2").parent("div").css("display", "none");
+                });
+    </script>
+        <script type="text/javascript">
+    	 $(".closebox3").on("click",function(){
+                    $(".closebox3").parent("div").css("display", "none");
+                });
+    </script>
+    <script type="text/javascript">
+    	 $(".closebox4").on("click",function(){
+                    $(".closebox4").parent("div").css("display", "none");
+                });
+    </script>
+    
+    
+    
+
+
+<script>
+_czc.push(["_setAutoPageview",false]);
+</script>
+<div style="display:none">
+</div>
+

@@ -1,0 +1,82 @@
+<header id="header" class="page-header bg-white b-b">
+<div class="navbar navbar-expand-lg">
+<a href="/" class="navbar-brand w w-auto-sm"><span class="hidden-folded d-inline l-s-n-1x w w-auto-sm">食乐道</span></a>
+<div class="collapse navbar-collapse order-2 order-lg-1" id="navbarToggler">
+	
+<form class="input-group m-2 my-lg-0" action="{:mac_url('vod/search')}" method="post">
+<div class="input-group-prepend"><button type="button" class="btn no-shadow no-bg px-0 text-inherit"><i data-feather="search"></i></button></div>
+<input type="text"   id="wd" name="wd"class="form-control no-border no-shadow no-bg typeahead" placeholder="视频搜索..." data-plugin="typeahead">
+</form>
+
+</div>
+<ul class="nav navbar-menu order-1 order-lg-2">
+<li class="nav-item dropdown"><a class="nav-link px-2" data-toggle="dropdown" data-pjax-state=""><svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-settings"><circle cx="12" cy="12" r="3"></circle><path d="M19.4 15a1.65 1.65 0 0 0 .33 1.82l.06.06a2 2 0 0 1 0 2.83 2 2 0 0 1-2.83 0l-.06-.06a1.65 1.65 0 0 0-1.82-.33 1.65 1.65 0 0 0-1 1.51V21a2 2 0 0 1-2 2 2 2 0 0 1-2-2v-.09A1.65 1.65 0 0 0 9 19.4a1.65 1.65 0 0 0-1.82.33l-.06.06a2 2 0 0 1-2.83 0 2 2 0 0 1 0-2.83l.06-.06a1.65 1.65 0 0 0 .33-1.82 1.65 1.65 0 0 0-1.51-1H3a2 2 0 0 1-2-2 2 2 0 0 1 2-2h.09A1.65 1.65 0 0 0 4.6 9a1.65 1.65 0 0 0-.33-1.82l-.06-.06a2 2 0 0 1 0-2.83 2 2 0 0 1 2.83 0l.06.06a1.65 1.65 0 0 0 1.82.33H9a1.65 1.65 0 0 0 1-1.51V3a2 2 0 0 1 2-2 2 2 0 0 1 2 2v.09a1.65 1.65 0 0 0 1 1.51 1.65 1.65 0 0 0 1.82-.33l.06-.06a2 2 0 0 1 2.83 0 2 2 0 0 1 0 2.83l-.06.06a1.65 1.65 0 0 0-.33 1.82V9a1.65 1.65 0 0 0 1.51 1H21a2 2 0 0 1 2 2 2 2 0 0 1-2 2h-.09a1.65 1.65 0 0 0-1.51 1z"></path></svg></a>
+<div class="dropdown-menu dropdown-menu-center mt-3 w-md animate fadeIn">
+<div class="setting px-3">
+<div class="mb-2 text-muted"><strong>设置:</strong></div>
+<div class="mb-3" id="settingLayout">
+<label class="ui-check ui-check-rounded my-1 d-block"><input type="checkbox" name="stickyHeader"><i></i><small>导航跟随</small></label>
+<label class="ui-check ui-check-rounded my-1 d-block"><input type="checkbox" name="stickyAside"><i></i><small>导航固定</small></label>
+<label class="ui-check ui-check-rounded my-1 d-block"><input type="checkbox" name="foldedAside"><i></i><small>导航放大</small></label>
+<label class="ui-check ui-check-rounded my-1 d-block"><input type="checkbox" name="hideAside"><i></i><small>导航缩小</small></label>
+</div>
+<div class="mb-2 text-muted"><strong>颜色:</strong></div>
+<div class="mb-2">
+<label class="radio radio-inline ui-check ui-check-md"><input type="radio" name="bg" value=""><i></i></label>
+<label class="radio radio-inline ui-check ui-check-color ui-check-md"><input type="radio" name="bg" value="bg-dark"><i class="bg-dark"></i></label>
+</div>
+<div class="mb-2 text-muted"><strong>布局:</strong></div>
+<div class="mb-3">
+<a href="#" class="btn btn-xs btn-white no-ajax mb-1">Default</a>
+<a href="#" class="btn btn-xs btn-primary no-ajax mb-1">A</a>
+<a href="#" class="btn btn-xs btn-info no-ajax mb-1">B</a>
+<a href="#" class="btn btn-xs btn-success no-ajax mb-1">C</a>
+<a href="#" class="btn btn-xs btn-warning no-ajax mb-1">D</a>
+</div>
+<!--<div class="mb-2 text-muted"><strong>应用:</strong></div>-->
+<!--<div>-->
+<!--<a href="#" class="btn btn-sm btn-white no-ajax mb-1">种子</a>-->
+<!--<a href="#" class="btn btn-sm btn-white no-ajax mb-1">美图</a>-->
+<!--<a href="#" class="btn btn-sm btn-white no-ajax mb-1">视频</a>-->
+<!--</div>-->
+</div>
+</div>
+</li>
+<li class="nav-item dropdown">
+<a class="nav-link px-2 mr-lg-2" data-toggle="dropdown" data-pjax-state=""><svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-bell"><path d="M22 17H2a3 3 0 0 0 3-3V9a7 7 0 0 1 14 0v5a3 3 0 0 0 3 3zm-8.27 4a2 2 0 0 1-3.46 0"></path></svg><span class="badge badge-pill badge-up bg-primary">6</span></a>
+<div class="dropdown-menu dropdown-menu-right mt-3 w-md animate fadeIn p-0">
+<div class="scrollable hover" style="max-height: 250px">
+<div class="list list-row">
+{maccms:vod num="6" by="rnd" order="desc" }
+<div class="list-item">
+<div><a href="{:mac_url_vod_play($vo)}" title="{$vo.vod_name}" data-pjax-state=""><span class="w-32 avatar gd-primary"><img src="{:mac_url_img($vo.vod_pic)}" alt="{$vo.vod_name}"></span></a></div>
+<div class="flex"><div class="item-feed h-2x">{$vo.vod_name}</div></div>
+</div>
+	{/maccms:vod}	
+</div>
+</div>
+<div class="d-flex px-3 py-2 b-t">
+<div class="flex">
+<span>6条推送信息</span>
+</div>
+<!--<a href="/" data-pjax-state="">全部 <i class="fa fa-angle-right text-muted"></i></a>-->
+</div>
+</div>
+</li>
+<li class="nav-item dropdown">
+<a href="#" data-toggle="dropdown" class="nav-link d-flex align-items-center px-2 text-color" data-pjax-state=""><span class="avatar w-24" style="margin: -2px"><img src="{$maccms.path_tpl}favicon.ico" alt="..."></span></a>
+<div class="dropdown-menu dropdown-menu-right w mt-3 animate fadeIn">
+<a class="dropdown-item"  data-pjax-state=""><span>广告合作</span></a>
+<!--<a class="dropdown-item" href="#" data-pjax-state=""><span class="badge bg-success text-uppercase">升级</span><span> 模版</span></a>-->
+<div class="dropdown-divider"></div>
+<a class="dropdown-item" href="https://t.me/{$maccms.site_icp}" data-pjax-state="" style="color:blue;">紙飛机</a>
+<a class="dropdown-item" href="https://t.me/{$maccms.site_icp}" data-pjax-state="">@{$maccms.site_icp}</a>
+<a class="dropdown-item" href="mailto: {$maccms.site_email}" data-pjax-state="" style="color:green;">联系邮箱</a>
+<a class="dropdown-item" href="mailto: {$maccms.site_email}" data-pjax-state="">{$maccms.site_email}</a>
+</div>
+</li>
+<li class="nav-item d-lg-none"><a href="#" class="nav-link px-2" data-toggle="collapse" data-toggle-class="" data-target="#navbarToggler" data-pjax-state=""><svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-search"><circle cx="11" cy="11" r="8"></circle><line x1="21" y1="21" x2="16.65" y2="16.65"></line></svg></a></li>
+<li class="nav-item d-lg-none"><a class="nav-link px-1" data-toggle="modal" data-target="#aside" data-pjax-state=""><svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-menu"><line x1="3" y1="12" x2="21" y2="12"></line><line x1="3" y1="6" x2="21" y2="6"></line><line x1="3" y1="18" x2="21" y2="18"></line></svg></a></li>
+</ul>
+</div>
+</header>

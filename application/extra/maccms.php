@@ -28,7 +28,7 @@ return array (
     'install_dir' => '/',
     'site_logo' => 'upload/site/20210113-1/7193299284a9314cbf49491453b7d119.png',
     'site_waplogo' => 'static/images/logo.jpg',
-    'template_dir' => 'RX08',
+    'template_dir' => 'sexsite',
     'html_dir' => 'html',
     'mob_status' => '0',
     'mob_template_dir' => 'default_wap',

@@ -1,0 +1,123 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1,maximum-scale=1">
+{include file="seo/vod_play"}  
+{include file="public/include"}  
+<style>
+.MacPlayer {
+    position: unset !important;}
+    </style>
+</head>
+<body class="layout-column">
+<!-- 页头 开始 -->
+{include file="public/top"}  
+<!-- 页头 结束 -->
+<div id="main" class="layout-row flex">
+<!-- 页头 开始 -->
+{include file="public/header"}  
+<!-- 页头 结束 -->
+<div class="flex">
+    {include file="public/toplink"}  
+<div id="content">
+<div class="padding">
+    <!--廣告位-->
+<div id="content">
+<div>
+  <div class="row">
+{maccms:link num="999" type="pic" order="asc" by="sort"}
+{if condition="$vo.link_sort >= '601'&& $vo.link_sort <='700' "}
+<div class="col col-12 col-sm-6 " clearfix ><a href="{$vo.link_url}"  target="_blank"  onclick="_czc.push(['_trackEvent', '播放器上橫幅广告点击', '{$vo.link_name}', '','','']);" ><div class="ads"><img style="height:80px; width: 100%;" src="/{$vo.link_logo}" alt="" /></div></a></div>
+{/if}
+{/maccms:link}
+</div>
+</div>
+</div>
+
+<!--廣告位-->
+<div class="row">
+<div class="col-md-12">
+<div class="card">
+<div class="card-header"><h1 class="h3 my-3 flex">{$obj.vod_name}</h1></div>
+<div class="card-header">
+<div class="embed-responsive embed-responsive-16by9">
+			{$player_data}
+					{$player_js}			
+</div>
+</div>
+</div>
+</div>
+</div>
+<!--廣告位-->
+<div id="content">
+<div>
+  <div class="row">
+{maccms:link num="999" type="pic" order="asc" by="sort"}
+{if condition="$vo.link_sort >= '501'&& $vo.link_sort <='600' "}
+{if condition= "$vo.link_name == '金沙'" }
+<div class="col col-12 col-sm-6 " clearfix ><a href="{$vo.link_url}"  target="_blank"  onclick="_czc.push(['_trackEvent', '播放器下橫幅广告点击', '{$vo.link_name}', '','','']);" ><div class="ads"><img style="height:80px; width: 100%;" src="https://img.downk.cc/item/5fd0a1b9f89b5965e1052dea.gif" alt="" /></div></a></div>
+{else/}	
+<div class="col col-12 col-sm-6 " clearfix ><a href="{$vo.link_url}"  target="_blank"  onclick="_czc.push(['_trackEvent', '播放器下橫幅广告点击', '{$vo.link_name}', '','','']);" ><div class="ads"><img style="height:80px; width: 100%;" src="/{$vo.link_logo}" alt="" /></div></a></div>
+{/if}
+{/if}
+{/maccms:link}
+</div>
+</div>
+</div>
+
+<!--廣告位-->
+<div class="row">
+<div class="col-md-8">
+<div class="card">
+<div class="card-header">
+<strong>其他人正在看</strong>
+</div>
+    {maccms:vod num="6" rel="'.$obj['art_rel_vod'].'" order="desc" by="rnd"}
+<div class="card-body d-flex b-b">
+<a href="{:mac_url_vod_play($vo)}" title="{$vo.vod_name}"><img src="{:mac_url_img($vo.vod_pic)}"  class="avatar w-40"></a>
+<div class="mx-3 flex">
+<div class="mb-3"><a href="{:mac_url_vod_play($vo)}" title="{$vo.vod_name}">{$vo.vod_name}</a><div class="text-muted text-sm">{$vo.vod_hits}人喜欢</div></div>
+<div><p>{$vo.vod_name}</p><button onClick="location.href='{:mac_url_vod_play($vo)}';" class="btn btn-primary">在线播放</button></div>
+</div>
+</div>
+    {/maccms:vod}
+
+
+
+
+
+<!--<div class="p-4" id="feed-form-">-->
+<!--<form>-->
+<!--<input type="text" name="search" class="form-control" placeholder="视频搜索...">-->
+<!--<div class="d-flex justify-content-end mt-3"><button class="btn btn-primary">搜索</button></div>-->
+<!--</form>-->
+<!--</div>-->
+</div>
+</div>
+<div class="col-md-4">
+<div class="card">
+<div class="card-header">猜你喜欢</div>
+<div class="list list-row">
+    {maccms:vod num="6" rel="'.$obj['art_rel_vod'].'" order="desc" by="rnd"}
+<div class="list-item">
+<div><a href="{:mac_url_vod_play($vo)}" title="{$vo.vod_name}" class="media media-16x9 r"><span class="media-content" style="background-image:url({:mac_url_img($vo.vod_pic)})"></span></a></div>
+<div class="flex"><a href="{:mac_url_vod_play($vo)}" title="{$vo.vod_name}" class="item-author text-color">{$vo.vod_hits} 播放</a>
+<div class="item-except text-muted text-sm h-1x">{$vo.vod_name}</div>
+</div>
+</div>
+    {/maccms:vod}
+</div>
+</div>
+</div>
+</div>
+</div>
+</div>
+<!-- 页尾 开始 -->
+{include file="public/footer"}  
+<!-- 页尾 结束 -->
+</div>
+</div>
+</body>
+</html>

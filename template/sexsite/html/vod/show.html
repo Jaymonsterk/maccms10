@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1,maximum-scale=1">
+{include file="seo/vod_search"}  
+{include file="public/include"}  
+
+</head>
+<body class="layout-column">
+<!-- 页头 开始 -->
+{include file="public/top"}  
+<!-- 页头 结束 -->
+<div id="main" class="layout-row flex">
+<!-- 页头 开始 -->
+{include file="public/header"}  
+<!-- 页头 结束 -->
+<div class="flex">
+    {include file="public/toplink"}  
+<div id="content">
+<div>
+<div class="padding">
+<!--廣告位-->
+<!--廣告位-->
+<div class="heading py-2 d-flex"><div>
+<div class="text-muted text-sm sr-item"></div>
+<h5 class="text-highlight sr-item">{$obj.type_name}</h5>
+</div>
+<span class="flex"></span>
+</div>
+<div class="slick slick-visible slick-arrow-center row">
+							{maccms:vod num="36" paging="yes" id="" ids="" type="current" topic=""  order="desc" by="time"}
+<div class="col-3">
+<div class="list-item slick-item">
+<div class="media media-16x9">
+<a href="{:mac_url_vod_play($vo)}" title="{$vo.vod_name}" class="ajax media-content" style="background-image:url({:mac_url_img($vo.vod_pic)})"></a>
+<div class="media-overlay overlay-bottom"><a href="{:mac_url_vod_play($vo)}" title="{$vo.vod_name}"><span class="badge badge-md text-uppercase bg-dark-overlay"></span></a></div>
+<div class="media-action"></div>
+</div>
+<div class="list-content">
+<div class="list-body"><a href="{:mac_url_vod_play($vo)}" title="{$vo.vod_name}" class="list-title title ajax h-1x">{$vo.vod_name}</a></div>
+<div class="list-footer"><div class="text-muted text-sm">{$vo.vod_hits} 人观看</div></div>
+</div>
+</div>
+</div>
+{/maccms:vod}
+</div>
+<div class="pagination list-center" id="wr-page">
+
+{include file="public/paging"}
+</div>
+</div>
+</div>
+</div>
+<!-- 页尾 开始 -->
+{include file="public/footer"}  
+<!-- 页尾 结束 -->
+</div>
+</div>
+</body>
+</html>
