@@ -10,8 +10,8 @@
 return [
     'lang_ver'=>'1055+',
     'hello'  => '欢迎使用',
-    'maccms_name'=>'苹果CMS-v10',
-    'maccms_copyright'=>'© MacCMS All Rights Reserved.',
+    'maccms_name'=>'v10',
+    'maccms_copyright'=>'© shiledao All Rights Reserved.',
 
     'vod'=>'视频',
     'art'=>'文章',
