@@ -17,7 +17,7 @@ return array (
   ),
   'site' => 
   array (
-    'site_name' => '免费短视频分享大全 - 大中国',
+    'site_name' => '食乐道222',
     'site_url' => 'vod.szd.com',
     'site_wapurl' => 'wap.test.cn',
     'site_keywords' => '短视频,搞笑视频,视频分享,免费视频,在线视频,预告片',
